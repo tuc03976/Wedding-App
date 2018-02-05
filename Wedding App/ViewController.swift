@@ -11,9 +11,9 @@ import FirebaseAuth
 import FirebaseDatabase
 
 
-
 class ViewController: UIViewController {
-
+    
+    
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
@@ -28,47 +28,47 @@ class ViewController: UIViewController {
     
     @IBAction func topTapped(_ sender: Any) {
         
-//
-//        if let email = emailTextField.text {
-//            if let password = passwordTextField.text {
-//                if signupMode {
-//                    // Sign up
-//                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
-//                        if let error = error {
-//
-//                            self.presentAlert(alert: error.localizedDescription)
-//
-//                        } else {
-//                            if let user = user {
-//
-//                                Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
-//                                self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
-//                            }
-//                        }
-//                    })
-//
-//                } else {
-//
-//                    // Log In
-//
-//                    Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
-//                        if let error = error {
-//
-//                            self.presentAlert(alert: error.localizedDescription) } else {
-//                            print("Log In was successful :)")
-//
-//
-//                            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
-//
-//                        }
-//
-//                    })
-//                }
-//            }
-//        }
-//
-//
-//
+        
+        if let email = emailTextField.text {
+            if let password = passwordTextField.text {
+                if signupMode {
+                    // Sign up
+                    Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
+                        if let error = error {
+                            
+                            self.presentAlert(alert: error.localizedDescription)
+                            
+                        } else {
+                            if let user = user {
+                                
+                                Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                                self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
+                            }
+                        }
+                    })
+                    
+                } else {
+                    
+                    // Log In
+                    
+                    Auth.auth().signIn(withEmail: email, password: password, completion: { (user, error) in
+                        if let error = error {
+                            
+                            self.presentAlert(alert: error.localizedDescription) } else {
+                            print("Log In was successful :)")
+                            
+                            
+                            self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
+                            
+                        }
+                        
+                    })
+                }
+            }
+        }
+        
+        
+        
         
         
         
@@ -88,16 +88,16 @@ class ViewController: UIViewController {
     
     @IBAction func bottomTapped(_ sender: Any) {
         
-//        if signupMode {
-//            // switch to Log In
-//            signupMode = false
-//            topButton.setTitle("Log In", for: .normal)
-//            bottomButton.setTitle("Switch to Sign Up", for: .normal)
-//        } else {
-//            // Switch to Sign up
-//            signupMode = true
-//            topButton.setTitle("Sign Up", for: .normal)
-//            bottomButton.setTitle("Switch to Log In", for: .normal)        }
+        if signupMode {
+            // switch to Log In
+            signupMode = false
+            topButton.setTitle("Log In", for: .normal)
+            bottomButton.setTitle("Switch to Sign Up", for: .normal)
+        } else {
+            // Switch to Sign up
+            signupMode = true
+            topButton.setTitle("Sign Up", for: .normal)
+            bottomButton.setTitle("Switch to Log In", for: .normal)        }
     }
     
     
@@ -113,7 +113,7 @@ class ViewController: UIViewController {
         
     }
     
-
-
+    
+    
 }
 
