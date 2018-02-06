@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 48;
+	objectVersion = 46;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -132,12 +132,13 @@
 				TargetAttributes = {
 					A6431DFE202769A40084E74D = {
 						CreatedOnToolsVersion = 9.2;
+						DevelopmentTeam = LGN4VA265U;
 						ProvisioningStyle = Automatic;
 					};
 				};
 			};
 			buildConfigurationList = A6431DFA202769A40084E74D /* Build configuration list for PBXProject "Wedding App" */;
-			compatibilityVersion = "Xcode 8.0";
+			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
@@ -377,8 +378,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSZ8ZH8KE2;
+				DEVELOPMENT_TEAM = LGN4VA265U;
 				INFOPLIST_FILE = "Wedding App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watson.Wedding-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -393,8 +395,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = MSZ8ZH8KE2;
+				DEVELOPMENT_TEAM = LGN4VA265U;
 				INFOPLIST_FILE = "Wedding App/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watson.Wedding-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";

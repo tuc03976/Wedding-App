@@ -105,6 +105,11 @@
 		A57019745D87512075963C8F543916F6 /* cache.h in Headers */ = {isa = PBXBuildFile; fileRef = 3E66833CC00A61CE006343EBC1AF69F8 /* cache.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A579DF19BFD2C5C9BA9ADE154A552549 /* c.h in Headers */ = {isa = PBXBuildFile; fileRef = 47CE05E3D1C12A98F98F86833E3C4BD8 /* c.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A5E8ED57B0C6F28417A66D4102B60205 /* version_edit.cc in Sources */ = {isa = PBXBuildFile; fileRef = 8C37916190C99CE803FB5811069AA684 /* version_edit.cc */; settings = {COMPILER_FLAGS = "-DOS_MACOSX -DLEVELDB_PLATFORM_POSIX -fno-objc-arc"; }; };
+		A605D9532029F09900E6BF07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */; };
+		A605D9542029F09A00E6BF07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */; };
+		A605D9552029F09B00E6BF07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */; };
+		A605D9562029F09C00E6BF07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */; };
+		A605D9572029F09D00E6BF07 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C085E02FF89804F50ADDA04F5A586E94 /* Security.framework */; };
 		A62E82C92029537700A7D727 /* CircleMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 40969CFED00F2A4F9A16327A916557F0 /* CircleMenu.swift */; };
 		A62E82CA2029538800A7D727 /* CircleMenuButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2DB4DE02120A8FA1AED31B9F4F654511 /* CircleMenuButton.swift */; };
 		A62E82CB2029538C00A7D727 /* CircleMenuLoader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C584946F4152A8825FA0BECEB6CCB3B /* CircleMenuLoader.swift */; };
@@ -381,6 +386,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605D9552029F09B00E6BF07 /* Security.framework in Frameworks */,
 				53927224C9956F91B958DD562CDCD045 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -389,6 +395,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605D9572029F09D00E6BF07 /* Security.framework in Frameworks */,
 				1269CCE0654E18C6EB537A111EBF5591 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -406,6 +413,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605D9562029F09C00E6BF07 /* Security.framework in Frameworks */,
 				05B1F02560378D28FEBD4E8F6D293216 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -414,6 +422,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605D9542029F09A00E6BF07 /* Security.framework in Frameworks */,
 				C4A1A63A4C67D9828DF94807BC2C3002 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -422,6 +431,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A605D9532029F09900E6BF07 /* Security.framework in Frameworks */,
 				70037719067023C26066A280A0B7228B /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
