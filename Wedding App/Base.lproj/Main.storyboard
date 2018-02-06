@@ -106,24 +106,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xzV-Il-VZQ">
-                                <rect key="frame" x="276" y="353" width="81" height="30"/>
+                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-WO-nup">
+                                <rect key="frame" x="160" y="308" width="95" height="120"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="iio-4N-a9a" kind="show" id="mrd-5w-f7h"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q7D-Nm-fSb">
-                                <rect key="frame" x="184" y="497" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <connections>
-                                    <segue destination="bbz-2V-cFh" kind="show" id="SYi-dZ-nYc"/>
-                                </connections>
+                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                <state key="normal" title="Button" image="Menu-btn2"/>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="nTA-hK-ErY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gRA-2T-ZQt">
@@ -133,6 +123,10 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <segue destination="iio-4N-a9a" kind="show" identifier="Go" id="42n-AE-o6V"/>
+                        <segue destination="bbz-2V-cFh" kind="show" identifier="Go2" id="WLi-Pj-oMq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guy-sw-Tud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -210,4 +204,7 @@
             <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="Menu-btn2" width="120" height="120"/>
+    </resources>
 </document>

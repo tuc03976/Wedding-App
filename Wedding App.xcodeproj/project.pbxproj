@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		85FFFEDB8E5643F4EE98F1E5 /* Pods_Wedding_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB16766378B4BAEC18C8049 /* Pods_Wedding_App.framework */; };
+		85FFFEDB8E5643F4EE98F1E5 /* Pods_Wedding_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB16766378B4BAEC18C8049 /* Pods_Wedding_App.framework */; settings = {ATTRIBUTES = (Required, ); }; };
 		A6431E03202769A40084E74D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E02202769A40084E74D /* AppDelegate.swift */; };
 		A6431E05202769A40084E74D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E04202769A40084E74D /* ViewController.swift */; };
 		A6431E08202769A40084E74D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6431E06202769A40084E74D /* Main.storyboard */; };
@@ -194,6 +194,7 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Wedding App/Pods-Wedding App-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
@@ -201,6 +202,7 @@
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
