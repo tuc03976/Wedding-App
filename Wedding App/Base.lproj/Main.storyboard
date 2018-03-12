@@ -138,12 +138,16 @@
                                 <items>
                                     <barButtonItem title="Share" id="IgC-Ao-wqB"/>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="atf-c4-QBa"/>
-                                    <barButtonItem title="Post" id="jk9-SQ-EOD"/>
+                                    <barButtonItem title="Post" id="jk9-SQ-EOD">
+                                        <connections>
+                                            <action selector="post:" destination="iio-4N-a9a" id="m2o-Ak-2PH"/>
+                                        </connections>
+                                    </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="cF1-9J-hWX"/>
                                     <barButtonItem style="plain" systemItem="camera" id="OGz-3M-db6"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_menu" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -206,7 +210,4 @@
             <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="icon_menu" width="120" height="120"/>
-    </resources>
 </document>

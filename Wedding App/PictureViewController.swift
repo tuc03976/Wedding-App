@@ -9,14 +9,47 @@
 import UIKit
 import Firebase
 
+
 class PictureViewController: UIViewController {
     
     @IBOutlet weak var imageView: UIImageView!
     
-    var imageName = "\(NSUUID().uuidString).jpg"
+    var imageName = "E7E6DC63-6339-4D9D-8513-FBACE6B7C3B4.jpg"
+    // "\(NSUUID().uuidString).jpg"
+    var users : [User] = []
+    var snapDescription = "testing"
+    var downloadURL = ""
+    let storage = Storage.storage().reference()
+  
     
     
-
+    
+    
+    
+    
+    @IBAction func post(_ sender: Any) {
+        
+        let reference = storage.child("images")
+        let picRef = reference.child(imageName)
+        
+        picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("\(error)")
+            } else {
+                // Data for "images/island.jpg" is returned
+                self.imageView.image = UIImage(data: data!)
+            }
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
     @IBAction func folder(_ sender: Any) {
         
         let imagesFolder = Storage.storage().reference().child("images")
@@ -48,8 +81,10 @@ class PictureViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
