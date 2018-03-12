@@ -105,14 +105,6 @@
                     <view key="view" contentMode="scaleToFill" id="xcq-bR-Bxy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleAspectFit" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cVg-WO-nup">
-                                <rect key="frame" x="160" y="308" width="95" height="120"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
-                                <state key="normal" title="Button" image="Menu-btn2"/>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
                         <viewLayoutGuide key="safeArea" id="nTA-hK-ErY"/>
                     </view>
@@ -204,7 +196,4 @@
             <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="Menu-btn2" width="120" height="120"/>
-    </resources>
 </document>

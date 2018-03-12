@@ -31,7 +31,7 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         
 }
 
-    //    let colors = [UIColor.redColor(), UIColor.grayColor(), UIColor.greenColor(), UIColor.purpleColor()]
+    //  let colors = [UIColor.redColor(), UIColor.grayColor(), UIColor.greenColor(), UIColor.purpleColor()]
     let items: [(icon: String, color: UIColor)] = [
         ("icon_home", UIColor(red: 0.19, green: 0.57, blue: 1, alpha: 1)),
         ("icon_search", UIColor(red: 0.22, green: 0.74, blue: 0, alpha: 1)),
@@ -42,18 +42,21 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // add button
-        //        let button = CircleMenu(
-        //            frame: CGRect(x: 200, y: 200, width: 50, height: 50),
-        //            normalIcon:"icon_menu",
-        //            selectedIcon:"icon_close",
-        //            buttonsCount: 4,
-        //            duration: 4,
-        //            distance: 120)
-        //        button.backgroundColor = UIColor.lightGrayColor()
-        //        button.delegate = self
-        //        button.layer.cornerRadius = button.frame.size.width / 2.0
-        //        view.addSubview(button)
+        let midY = self.view.frame.height / 2
+        let midX = self.view.frame.width / 2
+   
+        
+                let button = CircleMenu(
+                    frame: CGRect(x: midX - 25, y: midY - 25, width: 50, height: 50),
+                    normalIcon:"icon_menu",
+                    selectedIcon:"icon_close",
+                    buttonsCount: 4,
+                    duration: 2,
+                    distance: 120)
+                button.backgroundColor = UIColor.white
+                button.delegate = self
+                button.layer.cornerRadius = button.frame.size.width * 0.25
+                view.addSubview(button)
     }
     
     // MARK: <CircleMenuDelegate>
@@ -71,23 +74,28 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
     
     func circleMenu(_: CircleMenu, buttonWillSelected _: UIButton, atIndex: Int) {
         print("button will selected: \(atIndex)")
-        switch atIndex {
-        case 0:
-            print("The Cow Wins!")
-            performSegue(withIdentifier: "Go", sender: self)
-        case 1:
-            performSegue(withIdentifier: "Go", sender: self)
-            print("The Pig Wins!")
-        default:
-            print("Keep Trying")
-        }
-        
+       
         
     }
     
     
     func circleMenu(_: CircleMenu, buttonDidSelected _: UIButton, atIndex: Int) {
         print("button did selected: \(atIndex)")
+        switch atIndex {
+        case 0:
+            print("Picture!")
+            performSegue(withIdentifier: "Go", sender: self)
+        case 1:
+            performSegue(withIdentifier: "Go", sender: self)
+            print("Slide Show!")
+        default:
+            print("Keep Trying")
+        }
+        
+        
+        
+        
+        
     }
 }
 
