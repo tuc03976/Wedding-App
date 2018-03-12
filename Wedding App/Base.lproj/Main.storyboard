@@ -124,10 +124,10 @@
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="133.69565217391306"/>
         </scene>
-        <!--View Controller-->
+        <!--#MakeAWatsonMemory-->
         <scene sceneID="8Bu-th-pcp">
             <objects>
-                <viewController id="iio-4N-a9a" sceneMemberID="viewController">
+                <viewController id="iio-4N-a9a" customClass="PictureViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NmO-i5-8y5">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -143,7 +143,7 @@
                                     <barButtonItem style="plain" systemItem="camera" id="OGz-3M-db6"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icon_menu" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -151,6 +151,16 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="oRz-57-Dbh"/>
                     </view>
+                    <navigationItem key="navigationItem" title="#MakeAWatsonMemory" id="c1t-DW-OA1">
+                        <barButtonItem key="rightBarButtonItem" systemItem="organize" id="DXd-8J-qnC">
+                            <connections>
+                                <action selector="folder:" destination="iio-4N-a9a" id="vUi-9A-hXz"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="imageView" destination="hES-mx-IcC" id="lJs-cM-VHi"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9E-Px-i9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -196,4 +206,7 @@
             <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="icon_menu" width="120" height="120"/>
+    </resources>
 </document>
