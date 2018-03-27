@@ -86,7 +86,7 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
             print("Picture!")
             performSegue(withIdentifier: "Go", sender: self)
         case 1:
-            performSegue(withIdentifier: "Go", sender: self)
+            performSegue(withIdentifier: "Go2", sender: self)
             print("Slide Show!")
         default:
             print("Keep Trying")
