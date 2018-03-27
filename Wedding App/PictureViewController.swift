@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
-
-class PictureViewController: UIViewController {
+class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var imageView: UIImageView!
+    var imagePicker: UIImagePickerController?
     
     var imageName = "E7E6DC63-6339-4D9D-8513-FBACE6B7C3B4.jpg"
     // "\(NSUUID().uuidString).jpg"
@@ -20,7 +21,9 @@ class PictureViewController: UIViewController {
     var snapDescription = "testing"
     var downloadURL = ""
     let storage = Storage.storage().reference()
-  
+    let database = Database.database().reference()
+    
+    
     
     
     
@@ -60,7 +63,9 @@ class PictureViewController: UIViewController {
                     if let error = error {
                      print(error.localizedDescription)
                     } else {
-     print("success")
+//                        database.child("users").child(user.uid).child("picture").setValue(imageName)
+                        
+                        print("success")
        
                     }
                 }

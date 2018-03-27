@@ -147,9 +147,10 @@
                                     <barButtonItem style="plain" systemItem="camera" id="OGz-3M-db6"/>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings-btn" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.16289711730000001" green="0.70888463239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -210,4 +211,7 @@
             <point key="canvasLocation" x="857" y="134"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="settings-btn" width="120" height="120"/>
+    </resources>
 </document>
