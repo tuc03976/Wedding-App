@@ -17,6 +17,7 @@
 		A6431E18202770010084E74D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6431E17202770010084E74D /* GoogleService-Info.plist */; };
 		A6431E1A202786BE0084E74D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E19202786BE0084E74D /* MenuViewController.swift */; };
 		A6BF61952056143A0069F02D /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF61942056143A0069F02D /* PictureViewController.swift */; };
+		A6BF61A12071335F0069F02D /* SlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF61A02071335E0069F02D /* SlideShowViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		A6431E17202770010084E74D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6431E19202786BE0084E74D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		A6BF61942056143A0069F02D /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
+		A6BF61A02071335E0069F02D /* SlideShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideShowViewController.swift; sourceTree = "<group>"; };
 		CC598D2880770136A976E357 /* Pods-Wedding App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wedding App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wedding App/Pods-Wedding App.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -81,6 +83,7 @@
 				A6431E02202769A40084E74D /* AppDelegate.swift */,
 				A6431E04202769A40084E74D /* ViewController.swift */,
 				A6431E06202769A40084E74D /* Main.storyboard */,
+				A6BF61A02071335E0069F02D /* SlideShowViewController.swift */,
 				A6BF61942056143A0069F02D /* PictureViewController.swift */,
 				A6431E19202786BE0084E74D /* MenuViewController.swift */,
 				A6431E0C202769A40084E74D /* Assets.xcassets */,
@@ -201,6 +204,7 @@
 				"${BUILT_PRODUCTS_DIR}/CircleMenu/CircleMenu.framework",
 				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
 				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
@@ -209,6 +213,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CircleMenu.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
@@ -244,6 +249,7 @@
 				A6431E03202769A40084E74D /* AppDelegate.swift in Sources */,
 				A6431E1A202786BE0084E74D /* MenuViewController.swift in Sources */,
 				A6BF61952056143A0069F02D /* PictureViewController.swift in Sources */,
+				A6BF61A12071335F0069F02D /* SlideShowViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

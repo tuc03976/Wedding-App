@@ -13,5 +13,7 @@ pod 'Firebase/Auth'
 pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'CircleMenu'
+pod 'SDWebImage', '~> 4.0'
+
 
 end

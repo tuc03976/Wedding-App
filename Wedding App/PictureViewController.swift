@@ -9,51 +9,119 @@
 import UIKit
 import Firebase
 import FirebaseDatabase
+import AVKit
+import AVFoundation
+import Social
+import MobileCoreServices
+import SDWebImage
+
+
+//// Things I need to add
+//Storing image on firebase storage
+//Storing image url on firebase database
+//passing image to slideshowViewController
+
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker: UIImagePickerController?
     
-    var imageName = "E7E6DC63-6339-4D9D-8513-FBACE6B7C3B4.jpg"
-    // "\(NSUUID().uuidString).jpg"
+    var imageName = "\(NSUUID().uuidString).jpg"
     var users : [User] = []
-    var snapDescription = "testing"
     var downloadURL = ""
     let storage = Storage.storage().reference()
     let database = Database.database().reference()
     
     
     
-    
-    
-    
-    
-    
-    @IBAction func post(_ sender: Any) {
+    override func viewDidLoad() {
+        super.viewDidLoad()
         
-        let reference = storage.child("images")
-        let picRef = reference.child(imageName)
+        imagePicker = UIImagePickerController()
+        imagePicker?.delegate = self
+        print(imageName)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
-        picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                // Uh-oh, an error occurred!
-                print("\(error)")
-            } else {
-                // Data for "images/island.jpg" is returned
-                self.imageView.image = UIImage(data: data!)
-            }
+        if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
+            
+            imageView.image = image
+            
+            
         }
         
+        dismiss(animated: true, completion: nil)
         
+        
+    }
+    
+    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
+        
+        picker.dismiss(animated: true, completion: nil)
+        
+    }
+    
+    
+    @IBAction func selectPhotoTapped(_ sender: Any) {
+        if imagePicker != nil {
+            
+            imagePicker!.sourceType = .photoLibrary
+            
+            present(imagePicker!, animated: true, completion: nil) }
         
     }
     
     
     
     
+    @IBAction func cameraTapped(_ sender: Any) {
+        
+        if imagePicker != nil {
+            
+            imagePicker!.sourceType = .camera
+            
+            present(imagePicker!, animated: true, completion: nil) }
+        
+        
+    }
+    
+    
+    
+    @IBAction func post(_ sender: Any) {
+        
+        
+        
+        
+        
+        let ref = Storage.storage().reference().child("images")
+        let picRef = ref.child(imageName)
+        
+        picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("\(error)")
+            } else {
+              
+                self.imageView.image = UIImage(data: data!)
+                print(self.imageName)
+            }
+        }
+        
+    
+        
+        
+}
+    
+    
+    
+    
     
     @IBAction func folder(_ sender: Any) {
+        
+        //Save photo and send to slideshowviewcontroller
         
         let imagesFolder = Storage.storage().reference().child("images")
         
@@ -63,9 +131,17 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                     if let error = error {
                      print(error.localizedDescription)
                     } else {
-//                        database.child("users").child(user.uid).child("picture").setValue(imageName)
                         
-                        print("success")
+
+        if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                            print(downloadURL)
+            
+            
+            
+                        }
+                    
+                        
+                        print("saved")
        
                     }
                 }
@@ -73,24 +149,18 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         } }
     
-    
-    
-
-    
-  
-    
-    
-    
-    
-    
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    @IBAction func shareTapped(_ sender: Any) {
         
-    
+        let activityController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
+        
+        present(activityController, animated: true, completion: nil)
+        
+        
         
         
     }
+
+ 
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -39,6 +39,8 @@ class ViewController: UIViewController {
                             self.presentAlert(alert: error.localizedDescription)
                             
                         } else {
+                            
+                            
                             if let user = user {
                                 
                                 Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
