@@ -27,7 +27,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker: UIImagePickerController?
     
-    var imageName = "\(NSUUID().uuidString).jpg"
+    var imageName = ""
     var users : [User] = []
     var downloadURL = ""
     let storage = Storage.storage().reference()
@@ -40,7 +40,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imagePicker = UIImagePickerController()
         imagePicker?.delegate = self
-        print(imageName)
+    
     }
     
     
@@ -92,26 +92,16 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func post(_ sender: Any) {
         
-        
-        
-        
-        
-        let ref = Storage.storage().reference().child("images")
-        let picRef = ref.child(imageName)
-        
-        picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
-            if let error = error {
-                // Uh-oh, an error occurred!
-                print("\(error)")
-            } else {
-              
-                self.imageView.image = UIImage(data: data!)
-                print(self.imageName)
-            }
+        if imageName == "" {
+            
+        presentAlert(alert: "Save Image First")
+        print("save image first")
+            
+        } else {
+            
+              self.performSegue(withIdentifier: "ToSlide", sender: self)
+            
         }
-        
-    
-        
         
 }
     
@@ -121,7 +111,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func folder(_ sender: Any) {
         
-        //Save photo and send to slideshowviewcontroller
+        imageName = "\(NSUUID().uuidString).jpg"
         
         let imagesFolder = Storage.storage().reference().child("images")
         
@@ -129,25 +119,26 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             if let imageData = UIImageJPEGRepresentation(image, 0.1) {
                 imagesFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
                     if let error = error {
-                     print(error.localizedDescription)
+                        print(error.localizedDescription)
                     } else {
                         
-
-        if let downloadURL = metadata?.downloadURL()?.absoluteString {
-                            print(downloadURL)
-            
-            
-            
-                        }
-                    
                         
+                        if let downloadURL = metadata?.downloadURL()?.absoluteString {
+                            print(downloadURL)
+                            
+                        }
+                        print("Name of \(self.imageName)")
                         print("saved")
-       
+                        
                     }
                 }
-            )}
+                )}
             
-        } }
+            
+        }
+        
+        
+     }
     
     @IBAction func shareTapped(_ sender: Any) {
         
@@ -159,6 +150,35 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         
     }
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ToSlide" {
+       
+            if let selectVC = segue.destination as? SlideShowViewController {
+                selectVC.imageName = imageName
+                
+            }
+        }
+    
+    
+
+    }
+    
+    func presentAlert(alert:String) {
+        let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
+            
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+
+        
+        
+    }
+    
+    
+    
 
  
 

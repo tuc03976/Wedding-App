@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class SlideShowViewController: UIViewController {
     
@@ -15,12 +16,13 @@ class SlideShowViewController: UIViewController {
     //Put images in a sort of slideshow or feed
     //Refresh images after all images was displyed
     
+    var imageName: String = ""
+    @IBOutlet weak var imageView: UIImageView!
     
-
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+    print(imageName)
     }
 
     override func didReceiveMemoryWarning() {
@@ -28,7 +30,26 @@ class SlideShowViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
+    @IBAction func showSlides(_ sender: Any) {
+        
+        let ref = Storage.storage().reference().child("images")
+        let picRef = ref.child(imageName)
+        
+        picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
+            if let error = error {
+                // Uh-oh, an error occurred!
+                print("\(error)")
+            } else {
+                
+                self.imageView.image = UIImage(data: data!)
+                print(self.imageName)
+            }
+        }
+        
+        
+        
+    }
+    
  
 
 }

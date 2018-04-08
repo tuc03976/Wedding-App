@@ -179,6 +179,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="imageView" destination="hES-mx-IcC" id="lJs-cM-VHi"/>
+                        <segue destination="bbz-2V-cFh" kind="show" identifier="ToSlide" id="oSE-ea-uPi"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="C9E-Px-i9d" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -193,14 +194,37 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
-                                <rect key="frame" x="0.0" y="64" width="414" height="672"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_close" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
+                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="623" id="13w-uc-8tJ"/>
+                                </constraints>
                             </imageView>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-Fw-cA5">
+                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <items>
+                                    <barButtonItem title="Show" id="OJx-jk-zgD">
+                                        <connections>
+                                            <action selector="showSlides:" destination="bbz-2V-cFh" id="ohT-l7-et6"/>
+                                        </connections>
+                                    </barButtonItem>
+                                </items>
+                            </toolbar>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="o1O-ip-JNZ" secondAttribute="leading" id="AIv-Or-rSE"/>
+                            <constraint firstAttribute="trailing" secondItem="hRD-lS-aAP" secondAttribute="trailing" id="MTR-mw-Vjo"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="top" secondItem="b39-K1-oG0" secondAttribute="top" id="eGZ-sh-Qxd"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="trailing" secondItem="dLn-Fw-cA5" secondAttribute="trailing" id="jUE-D0-CU0"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="dLn-Fw-cA5" secondAttribute="leading" id="lbU-Kb-Gb0"/>
+                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" constant="5" id="xhW-sZ-DXk"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="b39-K1-oG0"/>
                     </view>
+                    <connections>
+                        <outlet property="imageView" destination="hRD-lS-aAP" id="eiJ-5p-6UV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU1-0R-0Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -226,6 +250,10 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icon_close" width="120" height="120"/>
         <image name="settings-btn" width="120" height="120"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="oSE-ea-uPi"/>
+    </inferredMetricsTieBreakers>
 </document>
