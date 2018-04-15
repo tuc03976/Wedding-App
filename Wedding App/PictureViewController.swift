@@ -28,8 +28,9 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     var imagePicker: UIImagePickerController?
     
     var imageName = ""
+    var image: UIImage?
     var users : [User] = []
-    var downloadURL = ""
+    var downloadURL: String?
     let storage = Storage.storage().reference()
     let database = Database.database().reference()
     
@@ -115,6 +116,13 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         let imagesFolder = Storage.storage().reference().child("images")
         
+        let photoRef = Database.database().reference().child("photos").childByAutoId()
+
+        let photoDictionary = ["image" : imageName]
+
+        photoRef.setValue(photoDictionary)
+        
+        
         if let image = imageView.image {
             if let imageData = UIImageJPEGRepresentation(image, 0.1) {
                 imagesFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
@@ -129,8 +137,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                         }
                         print("Name of \(self.imageName)")
                         print("saved")
-                        
-                    }
+                        self.performSegue(withIdentifier: "ToSlide", sender: self)                    }
                 }
                 )}
             
@@ -177,7 +184,11 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-    
+   
+        
+        
+        
+        
     
 
  
