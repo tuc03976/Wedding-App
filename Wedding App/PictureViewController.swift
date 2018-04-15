@@ -49,6 +49,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         if let image = info[UIImagePickerControllerOriginalImage] as? UIImage {
             
+            imageName = "\(NSUUID().uuidString).jpg"
             imageView.image = image
             
             
@@ -91,20 +92,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     
-    @IBAction func post(_ sender: Any) {
-        
-        if imageName == "" {
-            
-        presentAlert(alert: "Save Image First")
-        print("save image first")
-            
-        } else {
-            
-              self.performSegue(withIdentifier: "ToSlide", sender: self)
-            
-        }
-        
-}
+
     
     
     
@@ -112,8 +100,15 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func folder(_ sender: Any) {
         
-        imageName = "\(NSUUID().uuidString).jpg"
+       // imageName = "\(NSUUID().uuidString).jpg"
         
+        if imageName == "" {
+            
+            presentAlert(alert: "Choose or Take An Image First")
+            print("save image first")
+            
+        } else {
+            
         let imagesFolder = Storage.storage().reference().child("images")
         
         let photoRef = Database.database().reference().child("photos").childByAutoId()
@@ -144,7 +139,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         }
         
-        
+        }
      }
     
     @IBAction func shareTapped(_ sender: Any) {
@@ -185,18 +180,6 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
    
-        
-        
-        
-        
-    
-
- 
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 
    

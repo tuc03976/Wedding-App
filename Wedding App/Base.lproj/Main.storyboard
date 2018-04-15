@@ -142,13 +142,7 @@
                                         </connections>
                                     </barButtonItem>
                                     <barButtonItem style="plain" systemItem="flexibleSpace" id="atf-c4-QBa"/>
-                                    <barButtonItem title="Post" id="jk9-SQ-EOD">
-                                        <connections>
-                                            <action selector="post:" destination="iio-4N-a9a" id="m2o-Ak-2PH"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem width="42" style="plain" systemItem="fixedSpace" id="rOg-Tw-SHM"/>
-                                    <barButtonItem title="Folder" id="t63-6K-8EK">
+                                    <barButtonItem title="Post" width="189.66666666666669" id="t63-6K-8EK">
                                         <connections>
                                             <action selector="folder:" destination="iio-4N-a9a" id="rvX-xf-Bgu"/>
                                         </connections>
@@ -203,13 +197,7 @@
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-Fw-cA5">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Show" id="OJx-jk-zgD">
-                                        <connections>
-                                            <action selector="showSlides:" destination="bbz-2V-cFh" id="ohT-l7-et6"/>
-                                        </connections>
-                                    </barButtonItem>
-                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="sdG-jA-Lse"/>
-                                    <barButtonItem title="Animate" id="qn2-BO-enk">
+                                    <barButtonItem title="Animate" width="455" id="qn2-BO-enk">
                                         <connections>
                                             <action selector="startSlideShow:" destination="bbz-2V-cFh" id="9B1-d2-CHp"/>
                                         </connections>
@@ -259,6 +247,6 @@
         <image name="settings-btn" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WLi-Pj-oMq"/>
+        <segue reference="oSE-ea-uPi"/>
     </inferredMetricsTieBreakers>
 </document>
