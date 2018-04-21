@@ -33,14 +33,16 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     var downloadURL: String?
     let storage = Storage.storage().reference()
     let database = Database.database().reference()
-    
-    
+    let defaults = UserDefaults.standard
+    var test: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker = UIImagePickerController()
         imagePicker?.delegate = self
+        test = defaults.integer(forKey: "key")
+        print("\(test)")
     
     }
     
@@ -51,6 +53,9 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             imageName = "\(NSUUID().uuidString).jpg"
             imageView.image = image
+            test = test + 1
+            defaults.set(test, forKey: "key")
+            
             
             
         }
@@ -123,6 +128,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 imagesFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
                     if let error = error {
                         print(error.localizedDescription)
+                        self.presentAlert(alert: error.localizedDescription)
                     } else {
                         
                         

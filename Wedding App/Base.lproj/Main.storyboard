@@ -132,9 +132,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xha-fx-YHh">
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xha-fx-YHh">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="dhQ-tV-e99"/>
+                                </constraints>
                                 <items>
                                     <barButtonItem title="Share" id="IgC-Ao-wqB">
                                         <connections>
@@ -155,13 +157,21 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="settings-btn" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings-btn" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
                                 <rect key="frame" x="0.0" y="64" width="414" height="628"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="0.16289711730000001" green="0.70888463239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Xha-fx-YHh" firstAttribute="bottom" secondItem="oRz-57-Dbh" secondAttribute="bottom" id="4ZJ-Dp-Rqu"/>
+                            <constraint firstItem="hES-mx-IcC" firstAttribute="leading" secondItem="Xha-fx-YHh" secondAttribute="leading" id="BNh-ZW-PcN"/>
+                            <constraint firstItem="hES-mx-IcC" firstAttribute="leading" secondItem="NmO-i5-8y5" secondAttribute="leading" id="bmd-Ag-3Hu"/>
+                            <constraint firstItem="hES-mx-IcC" firstAttribute="trailing" secondItem="Xha-fx-YHh" secondAttribute="trailing" id="cUW-sL-RPc"/>
+                            <constraint firstItem="Xha-fx-YHh" firstAttribute="top" secondItem="hES-mx-IcC" secondAttribute="bottom" id="iQW-ZD-VY7"/>
+                            <constraint firstAttribute="trailing" secondItem="hES-mx-IcC" secondAttribute="trailing" id="uBd-qE-C4N"/>
+                            <constraint firstItem="hES-mx-IcC" firstAttribute="top" secondItem="oRz-57-Dbh" secondAttribute="top" id="ugZ-NH-yFQ"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="oRz-57-Dbh"/>
                     </view>
                     <navigationItem key="navigationItem" title="#MakeAWatsonMemory" id="c1t-DW-OA1">
@@ -190,9 +200,6 @@
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
                                 <rect key="frame" x="0.0" y="64" width="414" height="623"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="623" id="13w-uc-8tJ"/>
-                                </constraints>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-Fw-cA5">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
@@ -207,12 +214,13 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="o1O-ip-JNZ" secondAttribute="leading" id="AIv-Or-rSE"/>
-                            <constraint firstAttribute="trailing" secondItem="hRD-lS-aAP" secondAttribute="trailing" id="MTR-mw-Vjo"/>
-                            <constraint firstItem="hRD-lS-aAP" firstAttribute="top" secondItem="b39-K1-oG0" secondAttribute="top" id="eGZ-sh-Qxd"/>
-                            <constraint firstItem="hRD-lS-aAP" firstAttribute="trailing" secondItem="dLn-Fw-cA5" secondAttribute="trailing" id="jUE-D0-CU0"/>
-                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="dLn-Fw-cA5" secondAttribute="leading" id="lbU-Kb-Gb0"/>
-                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" constant="5" id="xhW-sZ-DXk"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="dLn-Fw-cA5" secondAttribute="leading" id="22r-X6-Swy"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="top" secondItem="b39-K1-oG0" secondAttribute="top" id="8ty-XJ-Nyv"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="o1O-ip-JNZ" secondAttribute="leading" id="PiA-NI-yYY"/>
+                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="bottom" secondItem="b39-K1-oG0" secondAttribute="bottom" id="WkE-N0-nZI"/>
+                            <constraint firstAttribute="trailing" secondItem="hRD-lS-aAP" secondAttribute="trailing" id="cI8-eA-PU4"/>
+                            <constraint firstItem="hRD-lS-aAP" firstAttribute="trailing" secondItem="dLn-Fw-cA5" secondAttribute="trailing" id="x0B-xY-YbD"/>
+                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" constant="5" id="xcF-mf-wgk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b39-K1-oG0"/>
                     </view>
