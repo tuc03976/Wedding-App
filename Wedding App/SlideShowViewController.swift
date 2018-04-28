@@ -13,9 +13,14 @@ import CoreData
 class SlideShowViewController: UIViewController {
     
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-
     
-    let coreImages = [CoreImages]()
+    let defaults = UserDefaults.standard
+
+    var coreDataArray: [UIImage] = []
+    
+    var coreImages = [CoreImages]()
+    
+    var numberOfPhotos: Int = 0
     
     var imageNameList: [String] = []
     
@@ -38,17 +43,8 @@ class SlideShowViewController: UIViewController {
 //        imageArray.append(UIImage(named: "icon_menu")!)
 //        imageArray.append(UIImage(named: "icon_close")!)
         
-        let test = CoreImages(context: context)
+  //       fetchCoreData()
         
-        test.savedImages = UIImagePNGRepresentation(UIImage(named: "icon_menu")!) as Data?
-        
-        do {
-            try context.save()
-            print("saved")
-        } catch {
-            print("Error \(error)")
-            
-        }
         
     }
     
@@ -61,6 +57,7 @@ class SlideShowViewController: UIViewController {
     override func viewDidAppear(_ animated: Bool) {
         
         downloadImages()
+        
         
     }
     
@@ -90,8 +87,11 @@ class SlideShowViewController: UIViewController {
                 } else {
                     
                     self.imageArray.append(UIImage(data: data!)!)
-                    //   self.imageView.image = UIImage(data: data!)
                     print(self.imageArray)
+                    self.numberOfPhotos = self.numberOfPhotos + 1
+                    self.defaults.set(self.numberOfPhotos, forKey: "numberOfPhotos")
+                    print(self.numberOfPhotos)
+                    
                     
                     
                 }
@@ -100,7 +100,9 @@ class SlideShowViewController: UIViewController {
         }
         
         if imageNameList.count == 0 {
+            
             self.presentAlert(alert: "Need wifi connection")
+           
         }
         
     }
@@ -133,6 +135,7 @@ class SlideShowViewController: UIViewController {
             
             self.presentAlert(alert: "Need wifi connection")
             
+        
         }  else {
         
         swap(&firstImageView, &secondImageView)
@@ -162,6 +165,34 @@ class SlideShowViewController: UIViewController {
     }
     
     
+    
+    @IBAction func toFeed(_ sender: Any) {
+        
+        if imageArray.count == 0 {
+            
+            presentAlert(alert: "Images are not loaded")
+            
+            } else {
+            
+            performSegue(withIdentifier: "toTable", sender: self)
+            
+            
+            
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     func presentAlert(alert:String) {
         let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
@@ -176,6 +207,92 @@ class SlideShowViewController: UIViewController {
     
     
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "toTable" {
+            
+            if let selectVC = segue.destination as? TableViewController {
+                selectVC.imageArray = imageArray
+                // saveCoreData()
+                
+                
+            }
+            
+            
+            
+            
+            
+        }
+        
+        
+        
+    }
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    func saveCoreData() {
+        
+        do {
+            try context.save()
+            print("saved")
+        } catch {
+            print("Error \(error)")
+            
+        }
+        
+    }
+    
+    func fetchCoreData() {
+    
+    let request : NSFetchRequest<CoreImages> = CoreImages.fetchRequest()
+    
+    do {  coreImages = try context.fetch(request)
+    print("fetch success")
+    } catch {
+    
+    print("error fetching data from context")
+    }
  
-
+    }
+    
+    
+    func loadCoreData()  {
+        
+        for item in coreImages {
+        
+        let test = item
+        
+        if let data = test.savedImages {
+        
+            self.coreDataArray.append(UIImage(data: data)!)
+            print("Core Data is in imageArray")
+            
+            
+            
+        } else {
+            
+            print("did not save into imageview")
+            
+            
+        }
+        
+        
+        }
+        
+        
+    }
+    
+    
+    
+    
+    
 }

@@ -14,6 +14,7 @@ import AVFoundation
 import Social
 import MobileCoreServices
 import SDWebImage
+import CoreData
 
 
 //// Things I need to add
@@ -33,16 +34,16 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     var downloadURL: String?
     let storage = Storage.storage().reference()
     let database = Database.database().reference()
-    let defaults = UserDefaults.standard
-    var test: Int = 1
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         imagePicker = UIImagePickerController()
         imagePicker?.delegate = self
-        test = defaults.integer(forKey: "key")
-        print("\(test)")
+       
     
     }
     
@@ -53,8 +54,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
             imageName = "\(NSUUID().uuidString).jpg"
             imageView.image = image
-            test = test + 1
-            defaults.set(test, forKey: "key")
+           
             
             
             
@@ -114,6 +114,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         } else {
             
+      //  let coreDataStorage = CoreImages(context: self.context)
+            
         let imagesFolder = Storage.storage().reference().child("images")
         
         let photoRef = Database.database().reference().child("photos").childByAutoId()
@@ -121,6 +123,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         let photoDictionary = ["image" : imageName]
 
         photoRef.setValue(photoDictionary)
+            
+            
         
         
         if let image = imageView.image {
@@ -138,6 +142,10 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                         }
                         print("Name of \(self.imageName)")
                         print("saved")
+                        
+                       // coreDataStorage.savedImages = imageData
+                        
+                        
                         self.performSegue(withIdentifier: "ToSlide", sender: self)                    }
                 }
                 )}
@@ -165,8 +173,15 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
        
             if let selectVC = segue.destination as? SlideShowViewController {
                 selectVC.imageName = imageName
+                // saveCoreData()
+            
                 
             }
+            
+            
+            
+            
+            
         }
     
     
@@ -185,8 +200,18 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
-   
     
+    func saveCoreData() {
+        
+        do {
+            try context.save()
+            print("saved")
+        } catch {
+            print("Error \(error)")
+            
+        }
+        
+    }
 
    
 

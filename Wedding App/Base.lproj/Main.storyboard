@@ -199,14 +199,20 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
-                                <rect key="frame" x="0.0" y="64" width="414" height="623"/>
+                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-Fw-cA5">
                                 <rect key="frame" x="0.0" y="692" width="414" height="44"/>
                                 <items>
-                                    <barButtonItem title="Animate" width="455" id="qn2-BO-enk">
+                                    <barButtonItem title="Slideshow" id="qn2-BO-enk">
                                         <connections>
                                             <action selector="startSlideShow:" destination="bbz-2V-cFh" id="9B1-d2-CHp"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem width="291" style="plain" systemItem="fixedSpace" id="aEv-UR-8M5"/>
+                                    <barButtonItem title="Tableview" id="ARa-3d-bKj">
+                                        <connections>
+                                            <action selector="toFeed:" destination="bbz-2V-cFh" id="XUp-Zg-GI2"/>
                                         </connections>
                                     </barButtonItem>
                                 </items>
@@ -220,17 +226,49 @@
                             <constraint firstItem="dLn-Fw-cA5" firstAttribute="bottom" secondItem="b39-K1-oG0" secondAttribute="bottom" id="WkE-N0-nZI"/>
                             <constraint firstAttribute="trailing" secondItem="hRD-lS-aAP" secondAttribute="trailing" id="cI8-eA-PU4"/>
                             <constraint firstItem="hRD-lS-aAP" firstAttribute="trailing" secondItem="dLn-Fw-cA5" secondAttribute="trailing" id="x0B-xY-YbD"/>
-                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" constant="5" id="xcF-mf-wgk"/>
+                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" id="xcF-mf-wgk"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="b39-K1-oG0"/>
                     </view>
                     <connections>
                         <outlet property="imageView" destination="hRD-lS-aAP" id="eiJ-5p-6UV"/>
+                        <segue destination="6ub-uH-yze" kind="show" identifier="toTable" id="5JE-8K-uHo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU1-0R-0Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1576.8115942028987" y="883.69565217391312"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="urg-K9-vMn">
+            <objects>
+                <tableViewController id="6ub-uH-yze" customClass="TableViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PPp-5u-E7o">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="344" id="3tT-w1-qld" customClass="CustomTableViewCell" customModule="Wedding_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="344"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3tT-w1-qld" id="3LJ-7i-Mjm">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="343.66666666666669"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="6ub-uH-yze" id="f92-q0-1vj"/>
+                            <outlet property="delegate" destination="6ub-uH-yze" id="yTm-U5-Hze"/>
+                        </connections>
+                    </tableView>
+                    <connections>
+                        <outlet property="tableview" destination="PPp-5u-E7o" id="fQ1-Rp-zxQ"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zN4-vq-TPl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2562.3188405797105" y="878.804347826087"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="d3S-SL-B1R">

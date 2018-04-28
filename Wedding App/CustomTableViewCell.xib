@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="248" id="KGk-i7-Jjw" customClass="CustomTableViewCell" customModule="Wedding_App" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="270" height="248"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="270" height="247.5"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_close" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-bS-xVV">
+                        <rect key="frame" x="0.0" y="0.0" width="270" height="248"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="270" id="6CH-Mg-zni"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="226" id="FG4-jJ-ZFx"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="238" id="OnU-5t-Km7"/>
+                            <constraint firstAttribute="height" constant="248" id="U4n-dt-5Q1"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VP7-bS-xVV" secondAttribute="trailing" id="OUP-cH-t6p"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-11" id="Qcu-RW-1wb"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RdR-Gk-qwq"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VLb-DF-nrJ"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-16" id="fSN-dO-i87"/>
+                    <constraint firstAttribute="bottom" secondItem="VP7-bS-xVV" secondAttribute="bottom" constant="-0.5" id="t51-wW-cKY"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tmH-We-o7m"/>
+                    <constraint firstItem="VP7-bS-xVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zP6-nJ-q8I"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="weddingimage" destination="VP7-bS-xVV" id="12X-Pl-za9"/>
+            </connections>
+            <point key="canvasLocation" x="95" y="201"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <image name="icon_close" width="120" height="120"/>
+    </resources>
+</document>

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		85FFFEDB8E5643F4EE98F1E5 /* Pods_Wedding_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4DB16766378B4BAEC18C8049 /* Pods_Wedding_App.framework */; settings = {ATTRIBUTES = (Required, ); }; };
+		A60D946D2091E489002DFE88 /* TableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D946B2091E489002DFE88 /* TableViewController.swift */; };
+		A60D94712091E560002DFE88 /* CustomTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A60D946F2091E560002DFE88 /* CustomTableViewCell.swift */; };
+		A60D94722091E560002DFE88 /* CustomTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A60D94702091E560002DFE88 /* CustomTableViewCell.xib */; };
 		A6431E03202769A40084E74D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E02202769A40084E74D /* AppDelegate.swift */; };
 		A6431E05202769A40084E74D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E04202769A40084E74D /* ViewController.swift */; };
 		A6431E08202769A40084E74D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6431E06202769A40084E74D /* Main.storyboard */; };
@@ -23,6 +26,9 @@
 /* Begin PBXFileReference section */
 		127C9C404692F5481DF6E361 /* Pods-Wedding App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wedding App.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Wedding App/Pods-Wedding App.debug.xcconfig"; sourceTree = "<group>"; };
 		4DB16766378B4BAEC18C8049 /* Pods_Wedding_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Wedding_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A60D946B2091E489002DFE88 /* TableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewController.swift; sourceTree = "<group>"; };
+		A60D946F2091E560002DFE88 /* CustomTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTableViewCell.swift; sourceTree = "<group>"; };
+		A60D94702091E560002DFE88 /* CustomTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomTableViewCell.xib; sourceTree = "<group>"; };
 		A6431DFF202769A40084E74D /* Wedding App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Wedding App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6431E02202769A40084E74D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A6431E04202769A40084E74D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -83,6 +89,9 @@
 				A6431E02202769A40084E74D /* AppDelegate.swift */,
 				A6431E04202769A40084E74D /* ViewController.swift */,
 				A6431E06202769A40084E74D /* Main.storyboard */,
+				A60D946B2091E489002DFE88 /* TableViewController.swift */,
+				A60D946F2091E560002DFE88 /* CustomTableViewCell.swift */,
+				A60D94702091E560002DFE88 /* CustomTableViewCell.xib */,
 				A6BF61A02071335E0069F02D /* SlideShowViewController.swift */,
 				A6BF61942056143A0069F02D /* PictureViewController.swift */,
 				A6431E19202786BE0084E74D /* MenuViewController.swift */,
@@ -168,6 +177,7 @@
 			files = (
 				A6431E10202769A40084E74D /* LaunchScreen.storyboard in Resources */,
 				A6431E18202770010084E74D /* GoogleService-Info.plist in Resources */,
+				A60D94722091E560002DFE88 /* CustomTableViewCell.xib in Resources */,
 				A6431E0D202769A40084E74D /* Assets.xcassets in Resources */,
 				A6431E08202769A40084E74D /* Main.storyboard in Resources */,
 			);
@@ -245,6 +255,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6431E0B202769A40084E74D /* Wedding_App.xcdatamodeld in Sources */,
+				A60D946D2091E489002DFE88 /* TableViewController.swift in Sources */,
+				A60D94712091E560002DFE88 /* CustomTableViewCell.swift in Sources */,
 				A6431E05202769A40084E74D /* ViewController.swift in Sources */,
 				A6431E03202769A40084E74D /* AppDelegate.swift in Sources */,
 				A6431E1A202786BE0084E74D /* MenuViewController.swift in Sources */,
