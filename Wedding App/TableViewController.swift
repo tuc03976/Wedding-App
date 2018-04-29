@@ -35,7 +35,7 @@ class TableViewController: UITableViewController {
     
         tableView.delegate = self
         tableView.dataSource = self
-       // tableView.separatorStyle = .none
+        tableView.separatorStyle = .none
       
         
     }

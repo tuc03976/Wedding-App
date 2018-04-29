@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -20,32 +19,38 @@
                 <rect key="frame" x="0.0" y="0.0" width="270" height="247.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_close" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-bS-xVV">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gDv-9P-foK">
                         <rect key="frame" x="0.0" y="0.0" width="270" height="248"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icon_close" translatesAutoresizingMaskIntoConstraints="NO" id="VP7-bS-xVV">
+                                <rect key="frame" x="8" y="8" width="254" height="232"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" cocoaTouchSystemColor="viewFlipsideBackgroundColor"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="270" id="6CH-Mg-zni"/>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="226" id="FG4-jJ-ZFx"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="238" id="OnU-5t-Km7"/>
-                            <constraint firstAttribute="height" constant="248" id="U4n-dt-5Q1"/>
+                            <constraint firstItem="VP7-bS-xVV" firstAttribute="top" secondItem="gDv-9P-foK" secondAttribute="top" constant="8" id="BbO-Wp-CrQ"/>
+                            <constraint firstItem="VP7-bS-xVV" firstAttribute="centerY" secondItem="gDv-9P-foK" secondAttribute="centerY" id="Eq2-FT-W2K"/>
+                            <constraint firstItem="VP7-bS-xVV" firstAttribute="centerX" secondItem="gDv-9P-foK" secondAttribute="centerX" id="Kph-CC-twt"/>
+                            <constraint firstAttribute="trailing" secondItem="VP7-bS-xVV" secondAttribute="trailing" constant="8" id="Td1-K7-iX9"/>
+                            <constraint firstItem="VP7-bS-xVV" firstAttribute="leading" secondItem="gDv-9P-foK" secondAttribute="leading" constant="8" id="gBv-k0-4zc"/>
+                            <constraint firstAttribute="bottom" secondItem="VP7-bS-xVV" secondAttribute="bottom" constant="8" id="iyR-eT-uTk"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="trailing" secondItem="VP7-bS-xVV" secondAttribute="trailing" id="OUP-cH-t6p"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-11" id="Qcu-RW-1wb"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="RdR-Gk-qwq"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="VLb-DF-nrJ"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-16" id="fSN-dO-i87"/>
-                    <constraint firstAttribute="bottom" secondItem="VP7-bS-xVV" secondAttribute="bottom" constant="-0.5" id="t51-wW-cKY"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="tmH-We-o7m"/>
-                    <constraint firstItem="VP7-bS-xVV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="zP6-nJ-q8I"/>
+                    <constraint firstItem="gDv-9P-foK" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="2yf-9h-xOC"/>
+                    <constraint firstItem="gDv-9P-foK" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="AI7-Ks-ga3"/>
+                    <constraint firstItem="gDv-9P-foK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="TGW-JG-yjb"/>
+                    <constraint firstAttribute="bottom" secondItem="gDv-9P-foK" secondAttribute="bottom" constant="-0.5" id="gCE-lD-BRT"/>
+                    <constraint firstAttribute="trailing" secondItem="gDv-9P-foK" secondAttribute="trailing" id="hFn-wx-9rt"/>
+                    <constraint firstItem="gDv-9P-foK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="tbT-7h-czb"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
                 <outlet property="weddingimage" destination="VP7-bS-xVV" id="12X-Pl-za9"/>
             </connections>
-            <point key="canvasLocation" x="95" y="201"/>
+            <point key="canvasLocation" x="91" y="195"/>
         </tableViewCell>
     </objects>
     <resources>

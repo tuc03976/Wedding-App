@@ -37,7 +37,7 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         ("icon_search", UIColor(red: 0.22, green: 0.74, blue: 0, alpha: 1)),
         ("notifications-btn", UIColor(red: 0.96, green: 0.23, blue: 0.21, alpha: 1)),
         ("settings-btn", UIColor(red: 0.51, green: 0.15, blue: 1, alpha: 1)),
-        ("nearby-btn", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
+        ("nearby-btn2", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
         ]
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,7 +50,7 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
                     frame: CGRect(x: midX - 25, y: midY - 25, width: 50, height: 50),
                     normalIcon:"icon_menu",
                     selectedIcon:"icon_close",
-                    buttonsCount: 4,
+                    buttonsCount: 5,
                     duration: 2,
                     distance: 120)
                 button.backgroundColor = UIColor.white

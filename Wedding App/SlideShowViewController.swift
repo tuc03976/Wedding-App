@@ -44,19 +44,18 @@ class SlideShowViewController: UIViewController {
 //        imageArray.append(UIImage(named: "icon_close")!)
         
   //       fetchCoreData()
-        
-        
+       
     }
     
     override func viewWillAppear(_ animated: Bool) {
-         retrievePhotos()
+        retrievePhotos()
         
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
-        downloadImages()
+       downloadImages()
         
         
     }
@@ -105,12 +104,14 @@ class SlideShowViewController: UIViewController {
            
         }
         
+     
+        
     }
     
     
     //TODO: Create the retrieveMessages method here:
     
-    func retrievePhotos() {
+    func retrievePhotos(){
         
         let photoDB = Database.database().reference().child("photos")
         
@@ -123,10 +124,10 @@ class SlideShowViewController: UIViewController {
             print(self.imageNameList)
             
             
-            
         }
         
-        
+       
+      
     }
     
     func animateImageViews() {

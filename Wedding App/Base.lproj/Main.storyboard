@@ -105,7 +105,7 @@
                     <view key="view" contentMode="scaleToFill" id="xcq-bR-Bxy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="darkTextColor"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nTA-hK-ErY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gRA-2T-ZQt">
@@ -293,6 +293,6 @@
         <image name="settings-btn" width="120" height="120"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="oSE-ea-uPi"/>
+        <segue reference="WLi-Pj-oMq"/>
     </inferredMetricsTieBreakers>
 </document>
