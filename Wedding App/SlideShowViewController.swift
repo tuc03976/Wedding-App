@@ -45,26 +45,28 @@ class SlideShowViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-         SVProgressHUD.show()
         
-        //   imageArray.append(UIImage(named: "icon_menu")!)
-//        imageArray.append(UIImage(named: "icon_close")!)
+        SVProgressHUD.show()
+        retrievePhotos()
         
-  //       fetchCoreData()
+        let delayInSeconds = 2.0 // 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
+            self.downloadImages()
+            SVProgressHUD.dismiss()
+            
+        
+        }
+        
        
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        self.retrievePhotos { () -> () in
-            print("done")
-        }
-        
+       
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-       downloadImages()
-       SVProgressHUD.dismiss()
+       
+    
     }
     
     
@@ -121,7 +123,7 @@ class SlideShowViewController: UIViewController {
     
     //TODO: Create the retrieveMessages method here:
     
-    func retrievePhotos(handleComplete:(()->())){
+    func retrievePhotos(){
         
         
         let photoDB = Database.database().reference().child("photos")
@@ -136,7 +138,6 @@ class SlideShowViewController: UIViewController {
             
             
         }
-        handleComplete()
         
       
     }
@@ -169,10 +170,15 @@ class SlideShowViewController: UIViewController {
     
     @IBAction func startSlideShow(_ sender: Any) {
         
+        if imageArray.count == 0 {
+            print("error, images not downloaded")
+            
+        } else {
+        
         view.addSubview(firstImageView)
         view.addSubview(secondImageView)
         
-        animateImageViews()
+            animateImageViews() }
         
     }
     
@@ -203,21 +209,15 @@ class SlideShowViewController: UIViewController {
     
     
     @IBAction func refresh(_ sender: Any) {
+        numberOfPhotos = 0
+        imageNameList.removeAll()
+        imageArray.removeAll()
         
-       SVProgressHUD.show()
-        
-       imageNameList.removeAll()
-       imageArray.removeAll()
-        
-        self.retrievePhotos { () -> () in
-            self.downloadImages()
+        let delayInSeconds = 2.0 // 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
+
+         self.viewDidLoad()
         }
-        
-        
-        
-        SVProgressHUD.dismiss()
-            
-        
         
         
         
