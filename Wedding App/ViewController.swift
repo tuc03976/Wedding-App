@@ -9,7 +9,7 @@
 import UIKit
 import FirebaseAuth
 import FirebaseDatabase
-
+import SVProgressHUD
 
 class ViewController: UIViewController {
     
@@ -18,9 +18,7 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var passwordTextField: UITextField!
     
-    
     @IBOutlet weak var topButton: UIButton!
-    
     
     @IBOutlet weak var bottomButton: UIButton!
     
@@ -29,14 +27,18 @@ class ViewController: UIViewController {
     @IBAction func topTapped(_ sender: Any) {
         
         
+        
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
+                
+                   SVProgressHUD.show()
+                
                 if signupMode {
                     // Sign up
                     Auth.auth().createUser(withEmail: email, password: password, completion: { (user, error) in
                         if let error = error {
-                            
-                            self.presentAlert(alert: error.localizedDescription)
+                             SVProgressHUD.dismiss()
+                             self.presentAlert(alert: error.localizedDescription)
                             
                         } else {
                             
@@ -44,6 +46,7 @@ class ViewController: UIViewController {
                             if let user = user {
                                 
                                 Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                                 SVProgressHUD.dismiss()
                                 self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
                             }
                         }
@@ -59,7 +62,7 @@ class ViewController: UIViewController {
                             self.presentAlert(alert: error.localizedDescription) } else {
                             print("Log In was successful :)")
                             
-                            
+                             SVProgressHUD.dismiss()
                             self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
                             
                         }

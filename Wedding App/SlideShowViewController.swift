@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import CoreData
+import SVProgressHUD
 
 class SlideShowViewController: UIViewController {
     
@@ -34,13 +35,19 @@ class SlideShowViewController: UIViewController {
     
     var currentImageindex = 0
     
+    var imagesRetrieved: Bool = false
+    
+    var imagesAreDownloaded: Bool = false
+    
     @IBOutlet weak var imageView: UIImageView!
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        imageArray.append(UIImage(named: "icon_menu")!)
+         SVProgressHUD.show()
+        
+        //   imageArray.append(UIImage(named: "icon_menu")!)
 //        imageArray.append(UIImage(named: "icon_close")!)
         
   //       fetchCoreData()
@@ -48,16 +55,16 @@ class SlideShowViewController: UIViewController {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        retrievePhotos()
-        
+        self.retrievePhotos { () -> () in
+            print("done")
+        }
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
         
        downloadImages()
-        
-        
+       SVProgressHUD.dismiss()
     }
     
     
@@ -69,6 +76,7 @@ class SlideShowViewController: UIViewController {
     
     func downloadImages() {
         
+       
         
         for item in imageNameList {
             
@@ -88,8 +96,9 @@ class SlideShowViewController: UIViewController {
                     self.imageArray.append(UIImage(data: data!)!)
                     print(self.imageArray)
                     self.numberOfPhotos = self.numberOfPhotos + 1
-                    self.defaults.set(self.numberOfPhotos, forKey: "numberOfPhotos")
+                    //self.defaults.set(self.numberOfPhotos, forKey: "numberOfPhotos")
                     print(self.numberOfPhotos)
+                    
                     
                     
                     
@@ -100,18 +109,20 @@ class SlideShowViewController: UIViewController {
         
         if imageNameList.count == 0 {
             
+            
             self.presentAlert(alert: "Need wifi connection")
            
         }
         
-     
+        
         
     }
     
     
     //TODO: Create the retrieveMessages method here:
     
-    func retrievePhotos(){
+    func retrievePhotos(handleComplete:(()->())){
+        
         
         let photoDB = Database.database().reference().child("photos")
         
@@ -125,8 +136,8 @@ class SlideShowViewController: UIViewController {
             
             
         }
+        handleComplete()
         
-       
       
     }
     
@@ -169,11 +180,17 @@ class SlideShowViewController: UIViewController {
     
     @IBAction func toFeed(_ sender: Any) {
         
+        SVProgressHUD.show()
+        
         if imageArray.count == 0 {
             
+            SVProgressHUD.dismiss()
+
             presentAlert(alert: "Images are not loaded")
             
             } else {
+            
+            SVProgressHUD.dismiss()
             
             performSegue(withIdentifier: "toTable", sender: self)
             
@@ -183,6 +200,29 @@ class SlideShowViewController: UIViewController {
         
         
     }
+    
+    
+    @IBAction func refresh(_ sender: Any) {
+        
+       SVProgressHUD.show()
+        
+       imageNameList.removeAll()
+       imageArray.removeAll()
+        
+        self.retrievePhotos { () -> () in
+            self.downloadImages()
+        }
+        
+        
+        
+        SVProgressHUD.dismiss()
+            
+        
+        
+        
+        
+    }
+    
     
     
     

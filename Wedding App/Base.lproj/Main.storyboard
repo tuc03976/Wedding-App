@@ -209,7 +209,13 @@
                                             <action selector="startSlideShow:" destination="bbz-2V-cFh" id="9B1-d2-CHp"/>
                                         </connections>
                                     </barButtonItem>
-                                    <barButtonItem width="291" style="plain" systemItem="fixedSpace" id="aEv-UR-8M5"/>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="m3G-YK-lf5"/>
+                                    <barButtonItem systemItem="refresh" id="Kku-ad-X7F">
+                                        <connections>
+                                            <action selector="refresh:" destination="bbz-2V-cFh" id="0RJ-DC-2rI"/>
+                                        </connections>
+                                    </barButtonItem>
+                                    <barButtonItem style="plain" systemItem="flexibleSpace" id="LxZ-q0-14d"/>
                                     <barButtonItem title="Tableview" id="ARa-3d-bKj">
                                         <connections>
                                             <action selector="toFeed:" destination="bbz-2V-cFh" id="XUp-Zg-GI2"/>

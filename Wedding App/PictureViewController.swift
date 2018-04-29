@@ -15,6 +15,7 @@ import Social
 import MobileCoreServices
 import SDWebImage
 import CoreData
+import SVProgressHUD
 
 
 //// Things I need to add
@@ -73,12 +74,20 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     
     @IBAction func selectPhotoTapped(_ sender: Any) {
+        SVProgressHUD.show()
+        
         if imagePicker != nil {
+            
+            SVProgressHUD.dismiss()
             
             imagePicker!.sourceType = .photoLibrary
             
-            present(imagePicker!, animated: true, completion: nil) }
-        
+            present(imagePicker!, animated: true, completion: nil) } else {
+            
+            SVProgressHUD.dismiss()
+            
+            self.presentAlert(alert: "Photo Library Error") }
+            
     }
     
     
@@ -86,11 +95,22 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func cameraTapped(_ sender: Any) {
         
+        SVProgressHUD.show()
+        
         if imagePicker != nil {
+            
+            SVProgressHUD.dismiss()
             
             imagePicker!.sourceType = .camera
             
-            present(imagePicker!, animated: true, completion: nil) }
+            present(imagePicker!, animated: true, completion: nil) } else {
+            
+            SVProgressHUD.dismiss()
+            
+            self.presentAlert(alert: "Camera feature not working")
+            
+            
+        }
         
         
     }
@@ -107,14 +127,19 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
        // imageName = "\(NSUUID().uuidString).jpg"
         
+        
+        SVProgressHUD.show()
+        
         if imageName == "" {
             
+            SVProgressHUD.dismiss()
             presentAlert(alert: "Choose or Take An Image First")
             print("save image first")
             
         } else {
             
       //  let coreDataStorage = CoreImages(context: self.context)
+      
             
         let imagesFolder = Storage.storage().reference().child("images")
         
@@ -132,6 +157,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                 imagesFolder.child(imageName).putData(imageData, metadata: nil, completion: { (metadata, error) in
                     if let error = error {
                         print(error.localizedDescription)
+                        SVProgressHUD.dismiss()
                         self.presentAlert(alert: error.localizedDescription)
                     } else {
                         
@@ -145,7 +171,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                         
                        // coreDataStorage.savedImages = imageData
                         
-                        
+                        SVProgressHUD.dismiss()
                         self.performSegue(withIdentifier: "ToSlide", sender: self)                    }
                 }
                 )}
@@ -158,12 +184,13 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func shareTapped(_ sender: Any) {
         
+        SVProgressHUD.show()
+        
         let activityController = UIActivityViewController(activityItems: [imageView.image!], applicationActivities: nil)
         
         present(activityController, animated: true, completion: nil)
         
-        
-        
+        SVProgressHUD.dismiss()
         
     }
     

@@ -14,6 +14,6 @@ pod 'Firebase/Storage'
 pod 'Firebase/Database'
 pod 'CircleMenu'
 pod 'SDWebImage', '~> 4.0'
-
+pod 'SVProgressHUD'
 
 end
