@@ -9,6 +9,12 @@
 
 import UIKit
 
+
+//Add user tags in tableview
+//Add make the interface pretty 
+
+
+
 class CustomTableViewCell: UITableViewCell {
     
     

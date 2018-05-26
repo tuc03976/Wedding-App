@@ -49,7 +49,7 @@ class SlideShowViewController: UIViewController {
         SVProgressHUD.show()
         retrievePhotos()
         
-        let delayInSeconds = 2.0 // 1
+        let delayInSeconds = 0.5 // 1
         DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
             self.downloadImages()
             SVProgressHUD.dismiss()

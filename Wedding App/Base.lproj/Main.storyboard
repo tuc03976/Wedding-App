@@ -105,7 +105,7 @@
                     <view key="view" contentMode="scaleToFill" id="xcq-bR-Bxy">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="nTA-hK-ErY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gRA-2T-ZQt">
@@ -239,6 +239,7 @@
                     <connections>
                         <outlet property="imageView" destination="hRD-lS-aAP" id="eiJ-5p-6UV"/>
                         <segue destination="6ub-uH-yze" kind="show" identifier="toTable" id="5JE-8K-uHo"/>
+                        <segue destination="9Sx-D5-YBh" kind="show" identifier="toTable2" id="6Vu-8Q-H4s"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU1-0R-0Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -293,6 +294,63 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xsc-Az-q5I" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="857" y="134"/>
+        </scene>
+        <!--Firebase Photos-->
+        <scene sceneID="pV6-AB-WWt">
+            <objects>
+                <tableViewController id="9Sx-D5-YBh" customClass="TableViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FYk-zH-H5x">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="450" id="QR2-0f-296" customClass="CustomTableViewCell" customModule="Wedding_App" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="414" height="450"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QR2-0f-296" id="j9b-3m-60p">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-1y-8r8">
+                                            <rect key="frame" x="8" y="360" width="398" height="82"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Celebrate Indigenous Peoples' Day with Never Alone: Ki Edition" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaY-wv-fwt">
+                                                    <rect key="frame" x="12" y="12" width="374" height="58"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wmn-wH-H2g">
+                                            <rect key="frame" x="29" y="39" width="356" height="294"/>
+                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        </imageView>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="captionLabel" destination="AaY-wv-fwt" id="0Vj-Rl-ner"/>
+                                    <outlet property="postImageView" destination="Wmn-wH-H2g" id="YHt-TB-5xJ"/>
+                                    <outlet property="shadowBackgroundView" destination="cS4-1y-8r8" id="NsC-ZM-7mx"/>
+                                    <outlet property="weddingimage" destination="Wmn-wH-H2g" id="E4O-ZM-QRB"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="9Sx-D5-YBh" id="hoo-RF-1cF"/>
+                            <outlet property="delegate" destination="9Sx-D5-YBh" id="kGd-ZP-7on"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Firebase Photos" id="bOs-ed-oEL">
+                        <barButtonItem key="rightBarButtonItem" systemItem="camera" id="Xa0-i4-V1m"/>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dFu-0U-cn0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="730.43478260869574" y="883.69565217391312"/>
         </scene>
     </scenes>
     <resources>
