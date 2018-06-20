@@ -13,6 +13,12 @@ import SVProgressHUD
 
 class SlideShowViewController: UIViewController {
     
+    
+    
+    ///////////////////////////////////////// VARIABLES, OUTLETS AND CONSTANTS //////////////////////////////////////////
+    
+    @IBOutlet weak var displayImage: UIImageView!
+    
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     let defaults = UserDefaults.standard
@@ -42,6 +48,12 @@ class SlideShowViewController: UIViewController {
     @IBOutlet weak var imageView: UIImageView!
     
     
+    
+    //////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,7 +61,7 @@ class SlideShowViewController: UIViewController {
         SVProgressHUD.show()
         retrievePhotos()
         
-        let delayInSeconds = 0.5 // 1
+        let delayInSeconds = 2.0 // 1
         DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
             self.downloadImages()
             SVProgressHUD.dismiss()
@@ -75,6 +87,11 @@ class SlideShowViewController: UIViewController {
         firstImageView.frame = view.frame
         secondImageView.frame = view.frame
     }
+    
+    
+    
+    ////////////////////////// IMAGE METHODS ////////////////////////////////
+    
     
     func downloadImages() {
         
@@ -150,7 +167,9 @@ class SlideShowViewController: UIViewController {
             
         
         }  else {
-        
+            
+        displayImage.isHidden = true
+            
         swap(&firstImageView, &secondImageView)
         secondImageView.image = imageArray[currentImageindex]
         currentImageindex = (currentImageindex + 1) % imageArray.count
@@ -183,6 +202,11 @@ class SlideShowViewController: UIViewController {
     }
     
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    //////////////////////////////////////////////////////// SEGUE //////////////////////////////////////////////////////////////////
+    
     
     @IBAction func toFeed(_ sender: Any) {
         
@@ -203,45 +227,6 @@ class SlideShowViewController: UIViewController {
             
             
         }
-        
-        
-    }
-    
-    
-    @IBAction func refresh(_ sender: Any) {
-        numberOfPhotos = 0
-        imageNameList.removeAll()
-        imageArray.removeAll()
-        
-        let delayInSeconds = 2.0 // 1
-        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
-
-         self.viewDidLoad()
-        }
-        
-        
-        
-    }
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    func presentAlert(alert:String) {
-        let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
-            
-        }
-        alertVC.addAction(okAction)
-        present(alertVC, animated: true, completion: nil)
-        
         
         
     }
@@ -272,10 +257,68 @@ class SlideShowViewController: UIViewController {
     
     
     
+    //////////////////////////////////////////////////////////
+    
+    
+    
+    ////////////////////////// REFRESH ////////////////////////////////
+    
+    
+    
+    @IBAction func refresh(_ sender: Any) {
+        numberOfPhotos = 0
+        imageNameList.removeAll()
+        imageArray.removeAll()
+        
+        
+        
+        let delayInSeconds = 2.0 // 1
+        DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
+
+            SVProgressHUD.show()
+            self.retrievePhotos()
+            
+            let delayInSeconds = 2.0 // 1
+            DispatchQueue.main.asyncAfter(deadline: .now() + delayInSeconds) { // 2
+                self.downloadImages()
+                SVProgressHUD.dismiss()
+            
+            
+        }
+        
+        
+        
+        } }
+    
+    
+    
+    ///////////////////////////////////////////////////////////////////////////////
     
     
     
     
+    //////////////////////////////// ALERT /////////////////////////////////////////
+    
+    
+    
+    func presentAlert(alert:String) {
+        let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
+            
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+        
+        
+        
+    }
+    
+    
+    ////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    /////////////////////////////////////////// SAVE CORE METHODS /////////////////////////////////////////////////////
     
     
     
@@ -333,7 +376,6 @@ class SlideShowViewController: UIViewController {
     }
     
     
-    
-    
+        ///////////////////////////////////////////////////////////////////////////////////////////////
     
 }

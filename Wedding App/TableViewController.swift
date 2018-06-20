@@ -14,25 +14,22 @@ import Firebase
 
 class TableViewController: UITableViewController {
     
+    
+    /////////////////////////////////////////// VARIABLES, OUTLETS AND CONSTANTS ////////////////////////////////////////////////
+    
     @IBOutlet var tableview: UITableView!
     
     var imageArray: [UIImage] = []
     
     var imageNameList: [String] = []
     
-    
     let cellSpacingHeight: CGFloat = 0
-    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
-        
-    
-
         imageArray.append(UIImage(named: "icon_close")!)
-    
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
@@ -40,21 +37,21 @@ class TableViewController: UITableViewController {
         
     }
     
-    
-    
     override func viewWillAppear(_ animated: Bool) {
-        
         
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        
-       
-       
-        
-       
+      
         
     }
+    
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    ////////////////////////////////////////////////// TABLEVIEWS //////////////////////////////////////////////////////////////
+    
     
 
     // Set the spacing between sections
@@ -104,6 +101,9 @@ class TableViewController: UITableViewController {
     
     
     
+    
+    
+    
     func configureTableView() {
         
         
@@ -112,19 +112,13 @@ class TableViewController: UITableViewController {
     }
     
     
+    /////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
     
-    
-    
-    
-    
-    
-    
-    
+    ///////////////////////////////////////////////////// IMAGE METHODS //////////////////////////////////////////////////////////////
     
     func downloadImages() {
-        
-        
+    
         for item in imageNameList {
             
             let ref = Storage.storage().reference().child("images")
@@ -132,19 +126,14 @@ class TableViewController: UITableViewController {
             
             picRef.getData(maxSize: 1 * 1024 * 1024) { data, error in
                 if let error = error {
-                    
                     // Uh-oh, an error occurred!
                     print("\(error)")
-                    
-                    
-                    
+                  
                 } else {
                     
                     self.imageArray.append(UIImage(data: data!)!)
                     print(self.imageArray)
-                 
-                   
-                    
+                  
                 }
             }
             
@@ -182,6 +171,11 @@ class TableViewController: UITableViewController {
     }
     
     
+    //////////////////////////////////////////////////////////////////////////////////////////////////
+    
+     ///////////////////////////////////////////////   ALERT  /////////////////////////////////////////////////////////
+    
+    
     func presentAlert(alert:String) {
         let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
         let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
@@ -195,5 +189,6 @@ class TableViewController: UITableViewController {
     }
     
     
+     ////////////////////////////////////////////////////////////////////////////////////////////////////////////////
     
 }

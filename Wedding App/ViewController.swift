@@ -13,10 +13,18 @@ import SVProgressHUD
 
 class ViewController: UIViewController {
     
+    ///// VARIABLES, OUTLETS AND CONSTANTS /////////////
+    
+    
+    var interger: [Int] = []
+    var names: [String] = []
+    
     
     @IBOutlet weak var emailTextField: UITextField!
     
     @IBOutlet weak var passwordTextField: UITextField!
+    
+    @IBOutlet weak var usernameTextField: UITextField!
     
     @IBOutlet weak var topButton: UIButton!
     
@@ -24,10 +32,14 @@ class ViewController: UIViewController {
     
     var signupMode = false
     
+    //////////////////////////////////////////////
+    
+    ////////// SIGN IN AND OFF /////////////
+    
     @IBAction func topTapped(_ sender: Any) {
         
         
-        
+        if let username = usernameTextField.text {
         if let email = emailTextField.text {
             if let password = passwordTextField.text {
                 
@@ -45,7 +57,18 @@ class ViewController: UIViewController {
                             
                             if let user = user {
                                 
-                                Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                              //  Database.database().reference().child("users").child(user.uid).child("email").setValue(user.email)
+                                
+                                
+                              //  Database.database().reference().child("users").child(user.uid).child("score").setValue(100)
+                                
+                                
+                                let dictionary = ["email": user.email, "score":"50", "name": username, "password": password, "uid": user.uid, "photos": ""] as [String : Any]
+                                
+                                
+                                Database.database().reference().child("users").child(user.uid).setValue(dictionary)
+                                
+                                
                                  SVProgressHUD.dismiss()
                                 self.performSegue(withIdentifier: "moveToSnaps", sender: nil)
                             }
@@ -72,23 +95,13 @@ class ViewController: UIViewController {
             }
         }
         
-        
+        }
         
         
         
         
     }
     
-    func presentAlert(alert:String) {
-        let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
-        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
-            
-        }
-        alertVC.addAction(okAction)
-        present(alertVC, animated: true, completion: nil)
-        
-        
-    }
     
     
     @IBAction func bottomTapped(_ sender: Any) {
@@ -105,18 +118,95 @@ class ViewController: UIViewController {
             bottomButton.setTitle("Switch to Log In", for: .normal)        }
     }
     
+    ///////////////////////////////////////////////////////////////////////////
     
     
     
+    ////////// ALERT  /////////////
     
+    
+    func presentAlert(alert:String) {
+        let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "Ok", style: .default) { (action) in alertVC.dismiss(animated: true, completion: nil)
+            
+        }
+        alertVC.addAction(okAction)
+        present(alertVC, animated: true, completion: nil)
+        
+        
+    }
+    
+  ///////////////////////////////////////////////////////////////////////////
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        fetchData()
+        
+        
+    }
+    
+    
+    func fetchData() {
+      
+        
+        let rootRef = Database.database().reference()
+        let query = rootRef.child("users").queryOrdered(byChild: "score")
+        query.observeSingleEvent(of: .value) {
+            (snapshot) in
+            for child in snapshot.children.allObjects as! [DataSnapshot] {
+                let value = child.value as? NSDictionary
+                let name = value?["name"] as? String ?? ""
+                let score = value?["score"] as? String ?? ""
+                
+             //   print(name)
+             //   print(score)
+                if let a = Int(score)  {
+                    self.interger.append(a)
+               //     print(self.interger)
+                    
+                }
+                
+                if let b = name as String? {
+                    self.names.append(b)
+                //    print(self.names)
+                    
+                }
+                
+                assert(self.names.count == self.interger.count)
+                var dict = [String:Int]()
+                for i in 0..<self.interger.count {
+                    let key = self.names[i]
+                    let value = self.interger[i]
+                    dict[key] = value
+                }
+                
+            //   (Array(dict).sorted{$0.1 < $1.1}).forEach{(k,v) in print("\(k):\(v)")}
+                
+                
+                
+                dict = [String : Int](uniqueKeysWithValues: dict.sorted{ $0.key < $1.key })
+                print(dict)
+                
+              
+            }
+        
+            
+            
+        }
+        
+        
+        
         
         
         
     }
+    
+    
+    
+    
+    
+    
     
     
     

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
-    <device id="retina5_5" orientation="portrait">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14113" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,46 +15,56 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="PA9-h9-UKO">
-                                <rect key="frame" x="10" y="30" width="404" height="696"/>
+                                <rect key="frame" x="10" y="30" width="365" height="627"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Steven and Soroya Wedding" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yID-a1-Rc6">
-                                        <rect key="frame" x="0.0" y="0.0" width="404" height="87"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="365" height="59.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="steven.watson291@gmail.com" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="at0-vV-SRV">
-                                        <rect key="frame" x="0.0" y="122" width="404" height="86.666666666666686"/>
+                                        <rect key="frame" x="0.0" y="94.5" width="365" height="59.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="abc123" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OZs-yd-5Ql">
-                                        <rect key="frame" x="0.0" y="243.66666666666669" width="404" height="87"/>
+                                        <rect key="frame" x="0.0" y="189" width="365" height="59.5"/>
                                         <nil key="textColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES" secureTextEntry="YES"/>
                                     </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Steven" borderStyle="roundedRect" placeholder="Username" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jtI-7l-hOA">
+                                        <rect key="frame" x="0.0" y="283.5" width="365" height="60"/>
+                                        <nil key="textColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XQ3-Ea-kv8">
-                                        <rect key="frame" x="0.0" y="365.66666666666669" width="404" height="86.666666666666686"/>
-                                        <state key="normal" title="Log In"/>
+                                        <rect key="frame" x="0.0" y="378.5" width="365" height="59.5"/>
+                                        <state key="normal" title="Log In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="topTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="uli-b5-aeb"/>
                                         </connections>
                                     </button>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Or" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MEI-gJ-jOA">
-                                        <rect key="frame" x="0.0" y="487.33333333333337" width="404" height="87"/>
+                                        <rect key="frame" x="0.0" y="473" width="365" height="59.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Z9k-0R-zuD">
-                                        <rect key="frame" x="0.0" y="609.33333333333337" width="404" height="86.666666666666629"/>
-                                        <state key="normal" title="Switch to Sign Up"/>
+                                        <rect key="frame" x="0.0" y="567.5" width="365" height="59.5"/>
+                                        <state key="normal" title="Switch to Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="bottomTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rty-rJ-JDd"/>
                                         </connections>
@@ -73,11 +83,13 @@
                                     <constraint firstItem="at0-vV-SRV" firstAttribute="leading" secondItem="PA9-h9-UKO" secondAttribute="leading" id="gOq-rL-z5F"/>
                                     <constraint firstAttribute="trailing" secondItem="at0-vV-SRV" secondAttribute="trailing" id="huK-Qp-xsE"/>
                                     <constraint firstAttribute="trailing" secondItem="yID-a1-Rc6" secondAttribute="trailing" id="kOH-vq-fIT"/>
+                                    <constraint firstItem="jtI-7l-hOA" firstAttribute="leading" secondItem="PA9-h9-UKO" secondAttribute="leading" id="pzO-TI-tLR"/>
+                                    <constraint firstAttribute="trailing" secondItem="jtI-7l-hOA" secondAttribute="trailing" id="say-FV-VI7"/>
                                     <constraint firstItem="MEI-gJ-jOA" firstAttribute="leading" secondItem="PA9-h9-UKO" secondAttribute="leading" id="zyq-7G-UFa"/>
                                 </constraints>
                             </stackView>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="PA9-h9-UKO" secondAttribute="bottom" constant="10" id="PIj-sG-r7g"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="PA9-h9-UKO" secondAttribute="trailing" id="Q8s-lI-qkt"/>
@@ -91,6 +103,7 @@
                         <outlet property="emailTextField" destination="at0-vV-SRV" id="1JA-Q7-hdl"/>
                         <outlet property="passwordTextField" destination="OZs-yd-5Ql" id="UgV-Sn-GZO"/>
                         <outlet property="topButton" destination="XQ3-Ea-kv8" id="QiU-aO-lje"/>
+                        <outlet property="usernameTextField" destination="jtI-7l-hOA" id="jIt-87-ndp"/>
                         <segue destination="y8R-1v-9LS" kind="presentation" identifier="moveToSnaps" id="CO8-jA-ltj"/>
                     </connections>
                 </viewController>
@@ -98,14 +111,53 @@
             </objects>
             <point key="canvasLocation" x="-31" y="134"/>
         </scene>
+        <!--Map View Controller-->
+        <scene sceneID="oat-1y-Xdq">
+            <objects>
+                <tableViewController id="fye-LV-oXv" customClass="MapViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="71a-uD-BDr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="72" id="l65-DY-Lec">
+                                <rect key="frame" x="0.0" y="28" width="375" height="72"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="l65-DY-Lec" id="DbJ-7l-Ls6">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="71.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="fye-LV-oXv" id="gMh-Fx-OHi"/>
+                            <outlet property="delegate" destination="fye-LV-oXv" id="uHS-aa-qdW"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Q1P-mh-2DX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1565.5999999999999" y="-568.06596701649175"/>
+        </scene>
         <!--Menu View Controller-->
         <scene sceneID="ddf-UF-ubS">
             <objects>
                 <viewController id="Zcn-qn-eAK" customClass="MenuViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="xcq-bR-Bxy">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC_7350" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="02c-Rt-QpM">
+                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                            </imageView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="02c-Rt-QpM" firstAttribute="leading" secondItem="xcq-bR-Bxy" secondAttribute="leading" id="N7K-Oj-RA6"/>
+                            <constraint firstItem="02c-Rt-QpM" firstAttribute="bottom" secondItem="nTA-hK-ErY" secondAttribute="bottom" id="bVE-E8-JmY"/>
+                            <constraint firstItem="02c-Rt-QpM" firstAttribute="top" secondItem="nTA-hK-ErY" secondAttribute="top" id="soF-QJ-gTJ"/>
+                            <constraint firstAttribute="trailing" secondItem="02c-Rt-QpM" secondAttribute="trailing" id="vYV-mH-oaj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="nTA-hK-ErY"/>
                     </view>
                     <navigationItem key="navigationItem" id="gRA-2T-ZQt">
@@ -118,22 +170,23 @@
                     <connections>
                         <segue destination="iio-4N-a9a" kind="show" identifier="Go" id="42n-AE-o6V"/>
                         <segue destination="bbz-2V-cFh" kind="show" identifier="Go2" id="WLi-Pj-oMq"/>
+                        <segue destination="fye-LV-oXv" kind="show" identifier="Go3" id="Pl8-nr-98v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="guy-sw-Tud" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8115942028987" y="133.69565217391306"/>
+            <point key="canvasLocation" x="1576.8" y="133.5832083958021"/>
         </scene>
         <!--#MakeAWatsonMemory-->
         <scene sceneID="8Bu-th-pcp">
             <objects>
                 <viewController id="iio-4N-a9a" customClass="PictureViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="NmO-i5-8y5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Xha-fx-YHh">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="623" width="375" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="dhQ-tV-e99"/>
                                 </constraints>
@@ -157,9 +210,9 @@
                                     </barButtonItem>
                                 </items>
                             </toolbar>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings-btn" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
-                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
-                                <color key="backgroundColor" red="0.16289711730000001" green="0.70888463239999999" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC_0651" translatesAutoresizingMaskIntoConstraints="NO" id="hES-mx-IcC">
+                                <rect key="frame" x="0.0" y="64" width="375" height="559"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -195,14 +248,15 @@
             <objects>
                 <viewController id="bbz-2V-cFh" customClass="SlideShowViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="o1O-ip-JNZ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" adjustsImageSizeForAccessibilityContentSizeCategory="YES" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
-                                <rect key="frame" x="0.0" y="64" width="414" height="628"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="DSC_0811" translatesAutoresizingMaskIntoConstraints="NO" id="hRD-lS-aAP">
+                                <rect key="frame" x="0.0" y="64" width="375" height="578"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </imageView>
                             <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dLn-Fw-cA5">
-                                <rect key="frame" x="0.0" y="692" width="414" height="44"/>
+                                <rect key="frame" x="0.0" y="642" width="375" height="28"/>
                                 <items>
                                     <barButtonItem title="Slideshow" id="qn2-BO-enk">
                                         <connections>
@@ -229,7 +283,7 @@
                             <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="dLn-Fw-cA5" secondAttribute="leading" id="22r-X6-Swy"/>
                             <constraint firstItem="hRD-lS-aAP" firstAttribute="top" secondItem="b39-K1-oG0" secondAttribute="top" id="8ty-XJ-Nyv"/>
                             <constraint firstItem="hRD-lS-aAP" firstAttribute="leading" secondItem="o1O-ip-JNZ" secondAttribute="leading" id="PiA-NI-yYY"/>
-                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="bottom" secondItem="b39-K1-oG0" secondAttribute="bottom" id="WkE-N0-nZI"/>
+                            <constraint firstItem="dLn-Fw-cA5" firstAttribute="bottom" secondItem="b39-K1-oG0" secondAttribute="bottom" constant="3" id="WkE-N0-nZI"/>
                             <constraint firstAttribute="trailing" secondItem="hRD-lS-aAP" secondAttribute="trailing" id="cI8-eA-PU4"/>
                             <constraint firstItem="hRD-lS-aAP" firstAttribute="trailing" secondItem="dLn-Fw-cA5" secondAttribute="trailing" id="x0B-xY-YbD"/>
                             <constraint firstItem="dLn-Fw-cA5" firstAttribute="top" secondItem="hRD-lS-aAP" secondAttribute="bottom" id="xcF-mf-wgk"/>
@@ -237,6 +291,7 @@
                         <viewLayoutGuide key="safeArea" id="b39-K1-oG0"/>
                     </view>
                     <connections>
+                        <outlet property="displayImage" destination="hRD-lS-aAP" id="BCp-q6-jiF"/>
                         <outlet property="imageView" destination="hRD-lS-aAP" id="eiJ-5p-6UV"/>
                         <segue destination="6ub-uH-yze" kind="show" identifier="toTable" id="5JE-8K-uHo"/>
                         <segue destination="9Sx-D5-YBh" kind="show" identifier="toTable2" id="6Vu-8Q-H4s"/>
@@ -244,22 +299,22 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lU1-0R-0Py" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1576.8115942028987" y="883.69565217391312"/>
+            <point key="canvasLocation" x="1576.8" y="882.90854572713647"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="urg-K9-vMn">
             <objects>
                 <tableViewController id="6ub-uH-yze" customClass="TableViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="PPp-5u-E7o">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleAspectFit" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="344" id="3tT-w1-qld" customClass="CustomTableViewCell" customModule="Wedding_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="344"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="344"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="3tT-w1-qld" id="3LJ-7i-Mjm">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="343.66666666666669"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="343.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                             </tableViewCell>
@@ -283,7 +338,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="y8R-1v-9LS" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="zhH-0y-2EZ">
-                        <rect key="frame" x="0.0" y="20" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -300,15 +355,15 @@
             <objects>
                 <tableViewController id="9Sx-D5-YBh" customClass="TableViewController" customModule="Wedding_App" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="FYk-zH-H5x">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" rowHeight="450" id="QR2-0f-296" customClass="CustomTableViewCell" customModule="Wedding_App" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="28" width="414" height="450"/>
+                                <rect key="frame" x="0.0" y="28" width="375" height="450"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="QR2-0f-296" id="j9b-3m-60p">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="450"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="450"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cS4-1y-8r8">
@@ -354,9 +409,11 @@
         </scene>
     </scenes>
     <resources>
-        <image name="settings-btn" width="120" height="120"/>
+        <image name="DSC_0651" width="4751" height="3171"/>
+        <image name="DSC_0811" width="6875" height="4588"/>
+        <image name="DSC_7350" width="5283" height="3526"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="WLi-Pj-oMq"/>
+        <segue reference="oSE-ea-uPi"/>
     </inferredMetricsTieBreakers>
 </document>

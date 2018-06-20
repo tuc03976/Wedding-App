@@ -31,6 +31,10 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         
 }
 
+    
+    
+     ////////////////////////// VARIABLES, OUTLETS AND CONSTANTS ////////////////////////////////
+    
     //  let colors = [UIColor.redColor(), UIColor.grayColor(), UIColor.greenColor(), UIColor.purpleColor()]
     let items: [(icon: String, color: UIColor)] = [
         ("camera", UIColor(red: 0.19, green: 0.57, blue: 1, alpha: 1)),
@@ -39,8 +43,13 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         ("controller", UIColor(red: 0.51, green: 0.15, blue: 1, alpha: 1)),
         ("list", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
         ]
+
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         
         let midY = self.view.frame.height / 2
         let midX = self.view.frame.width / 2
@@ -57,9 +66,15 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
                 button.delegate = self
                 button.layer.cornerRadius = button.frame.size.width * 0.25
                 view.addSubview(button)
+        
+        
     }
     
-    // MARK: <CircleMenuDelegate>
+     ////////////////////////////////////////////////////////////////////////////////////
+    
+    
+    
+    /////////// MARK: CIRCLE METHODS //////////////
     
     func circleMenu(_: CircleMenu, willDisplay button: UIButton, atIndex: Int) {
         button.backgroundColor = items[atIndex].color
@@ -88,13 +103,17 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         case 1:
             performSegue(withIdentifier: "Go2", sender: self)
             print("Slide Show!")
+        case 2:
+            performSegue(withIdentifier: "Go3", sender: self)
+            print("Map!")
+            
         default:
             print("Keep Trying")
         }
         
         
         
-        
+       //////////////////////////////////////////////////////////////////////////////////////
         
     }
 }

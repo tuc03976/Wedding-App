@@ -26,6 +26,9 @@ import SVProgressHUD
 
 class PictureViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate{
     
+    
+    ////////////////////////// VARIABLES, OUTLETS AND CONSTANTS ////////////////////////////////
+    
     @IBOutlet weak var imageView: UIImageView!
     var imagePicker: UIImagePickerController?
     
@@ -36,7 +39,10 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     let storage = Storage.storage().reference()
     let database = Database.database().reference()
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    
+    var uid = ""
+    var email = ""
+    var name = ""
+    var score = ""
     
     
     override func viewDidLoad() {
@@ -44,10 +50,32 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
         imagePicker = UIImagePickerController()
         imagePicker?.delegate = self
+        
+        let user = Auth.auth().currentUser
+        if let user = user {
+            // The user's ID, unique to the Firebase project.
+            // Do NOT use this value to authenticate with your backend server,
+            // if you have one. Use getTokenWithCompletion:completion: instead.
+            uid = user.uid
+            let scoreDB = Database.database().reference().child("users").child(user.uid).child("score")
+            scoreDB.setValue("100")
+            
+            
+        
+            // ...
+        }
+        
+        
+        
+        
        
     
     }
     
+    ///////////////////////////////////////////////////////////
+    
+    
+    ////////////////////////// PHOTO FUNCTIONS ////////////////////////////////
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         
@@ -57,14 +85,13 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             imageView.image = image
            
             
-            
-            
         }
         
         dismiss(animated: true, completion: nil)
         
         
     }
+    
     
     func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
         
@@ -125,6 +152,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     
     @IBAction func folder(_ sender: Any) {
         
+        //This func is used in post button
+        
        // imageName = "\(NSUUID().uuidString).jpg"
         
         
@@ -138,16 +167,19 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
             
         } else {
             
-      //  let coreDataStorage = CoreImages(context: self.context)
-      
+      // Saves image on Firebase and goes to Slideshow
             
         let imagesFolder = Storage.storage().reference().child("images")
         
-        let photoRef = Database.database().reference().child("photos").childByAutoId()
+        let photoRef = Database.database().reference().child("photos").childByAutoId().child("image")
+        
+            
+        photoRef.setValue(imageName)
+        //let userRef = Database.database().reference().child("users").child(uid).child("photos")
 
-        let photoDictionary = ["image" : imageName]
-
-        photoRef.setValue(photoDictionary)
+       // let photoDictionary = ["image" : imageName]
+            
+       // userRef.setValue(imageName)
             
             
         
@@ -169,7 +201,7 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
                         print("Name of \(self.imageName)")
                         print("saved")
                         
-                       // coreDataStorage.savedImages = imageData
+                
                         
                         SVProgressHUD.dismiss()
                         self.performSegue(withIdentifier: "ToSlide", sender: self)                    }
@@ -195,25 +227,26 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
     }
     
     
+    
+    
+      /////////////////////////////////////   SEGUE   /////////////////////////////////////////
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "ToSlide" {
        
             if let selectVC = segue.destination as? SlideShowViewController {
                 selectVC.imageName = imageName
-                // saveCoreData()
-            
-                
+              
             }
-            
-            
-            
-            
-            
+         
         }
     
-    
-
     }
+    
+    /////////////////////////////////////////////////
+
+      ////////// ALERT  /////////////
+    
     
     func presentAlert(alert:String) {
         let alertVC = UIAlertController(title: "Error", message: alert, preferredStyle: .alert)
@@ -227,18 +260,8 @@ class PictureViewController: UIViewController, UIImagePickerControllerDelegate, 
         
     }
     
+      /////////////////////////////////////////
     
-    func saveCoreData() {
-        
-        do {
-            try context.save()
-            print("saved")
-        } catch {
-            print("Error \(error)")
-            
-        }
-        
-    }
 
    
 
