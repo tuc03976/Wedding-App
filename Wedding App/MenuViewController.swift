@@ -41,7 +41,7 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         ("screen", UIColor(red: 0.22, green: 0.74, blue: 0, alpha: 1)),
         ("placeholder", UIColor(red: 0.96, green: 0.23, blue: 0.21, alpha: 1)),
         ("controller", UIColor(red: 0.51, green: 0.15, blue: 1, alpha: 1)),
-        ("list", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
+        ("home", UIColor(red: 1, green: 0.39, blue: 0, alpha: 1)),
         ]
 
     
@@ -106,6 +106,11 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
         case 2:
             performSegue(withIdentifier: "Go3", sender: self)
             print("Map!")
+        case 3:
+            performSegue(withIdentifier: "Go4", sender: self)
+            print("Quiz")
+        case 4:
+            openWeb()
             
         default:
             print("Keep Trying")
@@ -116,5 +121,19 @@ class MenuViewController: UIViewController, CircleMenuDelegate {
        //////////////////////////////////////////////////////////////////////////////////////
         
     }
+    
+    func openWeb() {
+     
+        let urlString = "http://watsonscottunion.minted.us/"
+        
+    if let url = URL(string: urlString)
+    {
+        
+        UIApplication.shared.open(url, options: [:], completionHandler: nil)
+    }
+    
+    }
+    
+    
 }
 

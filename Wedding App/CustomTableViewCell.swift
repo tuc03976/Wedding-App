@@ -20,6 +20,7 @@ class CustomTableViewCell: UITableViewCell {
     
     @IBOutlet weak var weddingimage: UIImageView!
     
+    @IBOutlet weak var label: UILabel!
     
     
     
@@ -28,6 +29,15 @@ class CustomTableViewCell: UITableViewCell {
         // Initialization code
         
         weddingimage.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        weddingimage.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        weddingimage.topAnchor.constraint(equalTo: self.topAnchor).isActive = true
+        weddingimage.bottomAnchor.constraint(equalTo: self.label.topAnchor).isActive = true
+        
+        weddingimage.contentMode = .scaleAspectFill
+        
+        label.leftAnchor.constraint(equalTo: self.leftAnchor).isActive = true
+        label.rightAnchor.constraint(equalTo: self.rightAnchor).isActive = true
+        label.bottomAnchor.constraint(equalTo: self.bottomAnchor).isActive = true
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

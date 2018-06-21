@@ -19,6 +19,13 @@
 		A6431E10202769A40084E74D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6431E0E202769A40084E74D /* LaunchScreen.storyboard */; };
 		A6431E18202770010084E74D /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A6431E17202770010084E74D /* GoogleService-Info.plist */; };
 		A6431E1A202786BE0084E74D /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6431E19202786BE0084E74D /* MenuViewController.swift */; };
+		A672199C20C62B5200FD9E2C /* MapViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A672199B20C62B5200FD9E2C /* MapViewController.swift */; };
+		A6970EE520DB3E5E00016F81 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6970EE420DB3E5E00016F81 /* QuizViewController.swift */; };
+		A6970EE820DB3F7D00016F81 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6970EE620DB3F7D00016F81 /* QuestionBank.swift */; };
+		A6970EE920DB3F7D00016F81 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6970EE720DB3F7D00016F81 /* Question.swift */; };
+		A6970EEB20DB3FA000016F81 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6970EEA20DB3FA000016F81 /* SecondViewController.swift */; };
+		A6970EF020DB405100016F81 /* ProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A6970EED20DB405000016F81 /* ProgressHUD.bundle */; };
+		A6970EF120DB405100016F81 /* ProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = A6970EEE20DB405100016F81 /* ProgressHUD.m */; };
 		A6BF61952056143A0069F02D /* PictureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF61942056143A0069F02D /* PictureViewController.swift */; };
 		A6BF61A12071335F0069F02D /* SlideShowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A6BF61A02071335E0069F02D /* SlideShowViewController.swift */; };
 /* End PBXBuildFile section */
@@ -39,6 +46,15 @@
 		A6431E11202769A40084E74D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6431E17202770010084E74D /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A6431E19202786BE0084E74D /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		A672199B20C62B5200FD9E2C /* MapViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapViewController.swift; sourceTree = "<group>"; };
+		A6970EE420DB3E5E00016F81 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		A6970EE620DB3F7D00016F81 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
+		A6970EE720DB3F7D00016F81 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
+		A6970EEA20DB3FA000016F81 /* SecondViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		A6970EEC20DB404F00016F81 /* Wedding App-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Wedding App-Bridging-Header.h"; sourceTree = "<group>"; };
+		A6970EED20DB405000016F81 /* ProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ProgressHUD.bundle; sourceTree = "<group>"; };
+		A6970EEE20DB405100016F81 /* ProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProgressHUD.m; sourceTree = "<group>"; };
+		A6970EEF20DB405100016F81 /* ProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProgressHUD.h; sourceTree = "<group>"; };
 		A6BF61942056143A0069F02D /* PictureViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PictureViewController.swift; sourceTree = "<group>"; };
 		A6BF61A02071335E0069F02D /* SlideShowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideShowViewController.swift; sourceTree = "<group>"; };
 		CC598D2880770136A976E357 /* Pods-Wedding App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Wedding App.release.xcconfig"; path = "Pods/Target Support Files/Pods-Wedding App/Pods-Wedding App.release.xcconfig"; sourceTree = "<group>"; };
@@ -87,8 +103,16 @@
 			isa = PBXGroup;
 			children = (
 				A6431E02202769A40084E74D /* AppDelegate.swift */,
+				A6970EEA20DB3FA000016F81 /* SecondViewController.swift */,
+				A6970EE720DB3F7D00016F81 /* Question.swift */,
+				A6970EE620DB3F7D00016F81 /* QuestionBank.swift */,
 				A6431E04202769A40084E74D /* ViewController.swift */,
 				A6431E06202769A40084E74D /* Main.storyboard */,
+				A6970EE420DB3E5E00016F81 /* QuizViewController.swift */,
+				A6970EED20DB405000016F81 /* ProgressHUD.bundle */,
+				A6970EEF20DB405100016F81 /* ProgressHUD.h */,
+				A6970EEE20DB405100016F81 /* ProgressHUD.m */,
+				A672199B20C62B5200FD9E2C /* MapViewController.swift */,
 				A60D946B2091E489002DFE88 /* TableViewController.swift */,
 				A60D946F2091E560002DFE88 /* CustomTableViewCell.swift */,
 				A60D94702091E560002DFE88 /* CustomTableViewCell.xib */,
@@ -100,6 +124,7 @@
 				A6431E11202769A40084E74D /* Info.plist */,
 				A6431E17202770010084E74D /* GoogleService-Info.plist */,
 				A6431E09202769A40084E74D /* Wedding_App.xcdatamodeld */,
+				A6970EEC20DB404F00016F81 /* Wedding App-Bridging-Header.h */,
 			);
 			path = "Wedding App";
 			sourceTree = "<group>";
@@ -148,6 +173,7 @@
 					A6431DFE202769A40084E74D = {
 						CreatedOnToolsVersion = 9.2;
 						DevelopmentTeam = LGN4VA265U;
+						LastSwiftMigration = 0940;
 						ProvisioningStyle = Automatic;
 					};
 				};
@@ -177,6 +203,7 @@
 			files = (
 				A6431E10202769A40084E74D /* LaunchScreen.storyboard in Resources */,
 				A6431E18202770010084E74D /* GoogleService-Info.plist in Resources */,
+				A6970EF020DB405100016F81 /* ProgressHUD.bundle in Resources */,
 				A60D94722091E560002DFE88 /* CustomTableViewCell.xib in Resources */,
 				A6431E0D202769A40084E74D /* Assets.xcassets in Resources */,
 				A6431E08202769A40084E74D /* Main.storyboard in Resources */,
@@ -257,11 +284,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6431E0B202769A40084E74D /* Wedding_App.xcdatamodeld in Sources */,
+				A6970EE520DB3E5E00016F81 /* QuizViewController.swift in Sources */,
 				A60D946D2091E489002DFE88 /* TableViewController.swift in Sources */,
+				A6970EE820DB3F7D00016F81 /* QuestionBank.swift in Sources */,
 				A60D94712091E560002DFE88 /* CustomTableViewCell.swift in Sources */,
 				A6431E05202769A40084E74D /* ViewController.swift in Sources */,
+				A6970EEB20DB3FA000016F81 /* SecondViewController.swift in Sources */,
+				A672199C20C62B5200FD9E2C /* MapViewController.swift in Sources */,
 				A6431E03202769A40084E74D /* AppDelegate.swift in Sources */,
 				A6431E1A202786BE0084E74D /* MenuViewController.swift in Sources */,
+				A6970EF120DB405100016F81 /* ProgressHUD.m in Sources */,
+				A6970EE920DB3F7D00016F81 /* Question.swift in Sources */,
 				A6BF61952056143A0069F02D /* PictureViewController.swift in Sources */,
 				A6BF61A12071335F0069F02D /* SlideShowViewController.swift in Sources */,
 			);
@@ -405,6 +438,7 @@
 			baseConfigurationReference = 127C9C404692F5481DF6E361 /* Pods-Wedding App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGN4VA265U;
 				INFOPLIST_FILE = "Wedding App/Info.plist";
@@ -412,6 +446,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watson.Wedding-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wedding App/Wedding App-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -422,6 +458,7 @@
 			baseConfigurationReference = CC598D2880770136A976E357 /* Pods-Wedding App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LGN4VA265U;
 				INFOPLIST_FILE = "Wedding App/Info.plist";
@@ -429,6 +466,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.watson.Wedding-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Wedding App/Wedding App-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

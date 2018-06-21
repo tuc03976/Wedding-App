@@ -30,10 +30,11 @@ class TableViewController: UITableViewController {
         
         tableView.register(UINib(nibName: "CustomTableViewCell", bundle: nil), forCellReuseIdentifier: "cell")
         imageArray.append(UIImage(named: "icon_close")!)
+        imageArray.append(UIImage(named: "gazingeyes")!)
         tableView.delegate = self
         tableView.dataSource = self
         tableView.separatorStyle = .none
-      
+        tableView.rowHeight = UITableViewAutomaticDimension
         
     }
     
