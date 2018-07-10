@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>1035683693289-j057dnu7qs0nd9b1g4pv56ftve83drd6.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1035683693289-j057dnu7qs0nd9b1g4pv56ftve83drd6</string>
+	<key>API_KEY</key>
+	<string>AIzaSyC4D3qawhrxZnPT7g20Arg4vPW2SMs6nPk</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1035683693289</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.watson.Wedding-App</string>
+	<key>PROJECT_ID</key>
+	<string>wedding-app-ea131</string>
+	<key>STORAGE_BUCKET</key>
+	<string>wedding-app-ea131.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1035683693289:ios:230215155d8a2cfb</string>
+	<key>DATABASE_URL</key>
+	<string>https://wedding-app-ea131.firebaseio.com</string>
+</dict>
+</plist>
